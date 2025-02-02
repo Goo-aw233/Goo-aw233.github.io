@@ -43,6 +43,7 @@
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_11.png">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_12.png">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_13.png">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_13_1.png">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_14.png">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_15.png">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_16.png">
@@ -62,8 +63,9 @@
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_26.png">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_27.png">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_28.png">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_29.png">
 <meta property="article:published_time" content="2022-07-10T13:33:43.000Z">
-<meta property="article:modified_time" content="2025-02-02T12:34:51.244Z">
+<meta property="article:modified_time" content="2025-02-02T14:19:58.845Z">
 <meta property="article:author" content="GuCATs">
 <meta property="article:tag" content="Windows">
 <meta property="article:tag" content="QEMU">
@@ -209,7 +211,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -326,7 +328,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-02-02 20:34:51" itemprop="dateModified" datetime="2025-02-02T20:34:51+08:00">2025-02-02</time>
+      <time title="修改时间：2025-02-02 22:19:58" itemprop="dateModified" datetime="2025-02-02T22:19:58+08:00">2025-02-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -364,7 +366,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.8k</span>
+      <span>4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -421,7 +423,7 @@
 
 <summary>你也可以创建 VHDX 或 VHD 而不是使用以上硬盘格式</summary>
 
-<p>使用 VHDX 或 VHD 的好处是可以直接挂载到<code>文件资源管理器</code>，可以直接简单地操作里面的文件，<strong>也可以挂载后直接使用 Dism++ 安装系统，安装完成后再启动到虚拟机</strong><br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/windows-server/storage/disk-management/manage-virtual-hard-disks/?wt.mc_id=studentamb_265231">管理虚拟硬盘 (VHD) | Microsoft Learn</a></p>
+<p>使用 VHDX 或 VHD 的好处是可以直接挂载到<code>文件资源管理器</code>，可以直接简单地操作里面的文件，性能更好，<strong>也可以挂载后直接使用 Dism++ 安装系统，安装完成后再启动到虚拟机</strong><br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/windows-server/storage/disk-management/manage-virtual-hard-disks/?wt.mc_id=studentamb_265231">管理虚拟硬盘 (VHD) | Microsoft Learn</a></p>
 </details>
 
 <p><font color=red><strong>由于硬盘文件较脆弱，切勿强制关机，否则会造成硬盘文件损坏（特别是 VHD(X)）</strong></font></p>
@@ -461,13 +463,22 @@
 <p>推荐开启：“视图(V)” &gt; “鼠标经过时捕获(H)”或“视图(V)” &gt; “捕获输入(G)”；若要将鼠标脱离虚拟机，请按下 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>G</kbd></p>
 </blockquote>
 <p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_13.png" alt="Windows 安装程序"></p>
+<blockquote>
+<p>Windows 11 24H2 之后新版安装程序界面有所变化，但是操作基本一致</p>
+</blockquote>
+<blockquote>
+<p>如果遇到 <code>Synchronous Exception at ...</code> 的问题，请替换 <code>QEMU_EFI.fd</code> 与 <code>vars-template-pflash.raw</code> 文件，并重新配置 BIOS，或者是重新尝试使用其他任意键（如非 <kbd>Enter</kbd>、<kbd>Shift</kbd>、<kbd>Space</kbd> 之类的）以继续（偶然发现的另一个小妙招）<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_13_1.png" alt="Synchronous Exception"></p>
+</blockquote>
 <p>在选择磁盘的时候，点击“加载驱动程序(L)”</p>
 <p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_14.png" alt="加载驱动程序"></p>
-<p>选择“浏览(B)”</p>
+<p>选择“浏览”</p>
 <p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_15.png" alt="浏览"></p>
 <p>选择 VirtIO-Win 光驱，找到名为“viostor”的文件夹，选择里面“w11”文件夹下的“ARM64”文件夹（如果安装的是 Windows 10 则选择 <code>w10</code>，以此类推）</p>
+<blockquote>
+<p><code>viostor</code> 文件夹一般在最后一个文件夹，在 <code>Boot (X:)</code> 分区之上</p>
+</blockquote>
 <p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_16.png" alt="选择 VirtIO 驱动"></p>
-<p>选择驱动程序，然后点击“下一页(N)”，这样就可以正常安装系统了</p>
+<p>选择驱动程序，然后点击“安装(I)”，这样就可以正常安装系统了</p>
 <p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_17.png" alt="选择驱动"></p>
 <p>最后进入无尽的等待…</p>
 <p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_18.png" alt="复制文件"></p>
@@ -490,8 +501,10 @@
 <p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_Extra-4.png" alt="下一阶段"></p>
 </details>
 
+<p>从进入安装程序到准备就绪，花了近一个半小时（<br>没什么意外的话，可能这个要转 114514h（悲<br>（而且鉴于无法联网，且硬盘驱动都要自己加载，所以这个过程跳过也没啥问题（）</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_19.png" alt="准备就绪"></p>
 <p>再等待亿会，就可以进入 OOBE 了</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_19.png" alt="OOBE"></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_20.png" alt="OOBE"></p>
 <p>由于暂时没有网卡驱动，且 Windows 11 要求联网才能继续，所以需要跳过联网激活验证（Windows 10 可跳过该步骤）<br>按下 <kbd>Shift</kbd> + <kbd>F10</kbd> 打开 CMD，并输入以下命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oobe\BypassNRO.cmd</span><br></pre></td></tr></table></figure>
 
@@ -503,7 +516,7 @@
 
 </details>
 
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_20.png" alt="命令"></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_21.png" alt="命令"></p>
 <p>等待一会，系统会自动重启，然后就可以继续正常安装了</p>
 <blockquote>
 <p>如果这期间 OOBE 仍要求联网，可以按下 <kbd>Shift</kbd> + <kbd>F10</kbd> 打开 CMD，输入 <code>explorer</code> 并回车，然后再按<a href="#%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8">网卡驱动</a>的方式安装网卡驱动后继续</p>
@@ -520,25 +533,25 @@
 
 <hr>
 <p>一切都开始好起来力）</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_21.png" alt="此操作可能需要几分钟"></p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_22.png" alt="进入桌面"></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_22.png" alt="此操作可能需要几分钟"></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_23.png" alt="进入桌面"></p>
 <h2 id="网卡驱动"><a href="#网卡驱动" class="headerlink" title="网卡驱动"></a>网卡驱动</h2><p>右键“开始菜单”，选择“终端(管理员)”、“Windows PowerShell(管理员)”或“命令提示符(管理员)”<br>输入以下命令并重启</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /set testsigning on</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>关于加载已进行测试签名的驱动程序，请参阅 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/windows-hardware/drivers/install/the-testsigning-boot-configuration-option/?wt.mc_id=studentamb_265231">允许加载已进行测试签名的驱动程序 - Windows drivers | Microsoft Learn</a></p>
 </blockquote>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_23.png" alt="开启测试模式"></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_24.png" alt="开启测试模式"></p>
 <p>在文件资源管理器里打开 VirtIO-Win 光驱，然后定位到 <code>\NetKVM\w11\ARM64</code>（如果是 Windows 10 就选择 <code>w10</code> 文件夹，以此类推）<br>右键类型为“安装信息”的 netkvm 文件，选择“安装”</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_24.png" alt="安装 netkvm"></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_25.png" alt="安装 netkvm"></p>
 <p>在弹出的 UAC 窗口中选择“是”</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_25.png" alt="UAC"></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_26.png" alt="UAC"></p>
 <p>等待一会，就提示安装完成</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_26.png" alt="安装完成"></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_27.png" alt="安装完成"></p>
 <p>再等一会就有网络了</p>
 <h2 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h2><p>这是后在里面运行 Dism++ ARM64（Win32）与微软电脑管家（MSIX 打包的 C#/WebView2 应用）的效果（启动速度和运行效率会比 x64 转译 ARM64 快许多）</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_27.png" alt="Dism++ ARM64"></p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_28.png" alt="微软电脑管家"></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_28.png" alt="Dism++ ARM64"></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/webAssets@main/Pics/install-Windows-on-ARM-in-QEMU/install-Windows-on-ARM-in-QEMU_29.png" alt="微软电脑管家"></p>
 <h2 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h2><ol>
 <li>光驱<br>如果你后面不需要光驱了可以把</li>
 </ol>
@@ -648,8 +661,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/zh-CN/tutorial/Windows/repairsystem/" rel="prev" title="修复 Windows 系统组件">
-                  <i class="fa fa-chevron-left"></i> 修复 Windows 系统组件
+                <a href="/zh-CN/tutorial/VM/QEMU/WindowsARMonQEMU/" rel="prev" title="QEMU 安装 Windows ARM">
+                  <i class="fa fa-chevron-left"></i> QEMU 安装 Windows ARM
                 </a>
             </div>
             <div class="post-nav-item">
@@ -706,14 +719,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">48k</span>
+    <span title="站点总字数">51k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:40</span>
+    <span title="站点阅读时长">2:50</span>
   </span>
 </div>
 <div class="busuanzi-count">
