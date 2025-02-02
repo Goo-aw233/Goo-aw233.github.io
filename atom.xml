@@ -6,7 +6,7 @@
   <link href="https://goo-aw233.github.io/atom.xml" rel="self"/>
   
   <link href="https://goo-aw233.github.io/"/>
-  <updated>2025-02-02T14:33:01.716Z</updated>
+  <updated>2025-02-02T14:35:13.390Z</updated>
   <id>https://goo-aw233.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/WindowsARMonQEMU/"/>
     <id>https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/WindowsARMonQEMU/</id>
     <published>2025-02-02T12:24:26.715Z</published>
-    <updated>2025-02-02T14:33:01.716Z</updated>
+    <updated>2025-02-02T14:35:13.390Z</updated>
     
-    <content type="html"><![CDATA[<!DOCTYPE html><html lang="zh-CN">    <head>        <meta charset="UTF-8">        <meta property="article:author" content="GuCATs">        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Goo-aw233/webAssets/Pics/Blog/Favicon.png">        <title>正在跳转... | GuCATs'摸鱼站</title>        <meta http-equiv="refresh" content="0; url=https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/install-Windows-on-ARM-in-QEMU" />    </head></html>]]></content>
+    <content type="html"><![CDATA[<!DOCTYPE html><html>    <head>        <meta charset="UTF-8">        <meta property="article:author" content="GuCATs">        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Goo-aw233/webAssets/Pics/Blog/Favicon.png">        <title>正在跳转... | GuCATs'摸鱼站</title>        <meta http-equiv="refresh" content="0; url=https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/install-Windows-on-ARM-in-QEMU" />    </head></html>]]></content>
     
     
       
@@ -31,11 +31,11 @@
         
         
     <summary type="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;UTF-8&quot;&gt;
         &lt;meta property=&quot;article:author&quot; content=&quot;GuCATs&quot;&gt;
-   </summary>
+        &lt;link</summary>
         
       
     
@@ -718,9 +718,9 @@
     <category term="DOS" scheme="https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/DOS/"/>
     
     
-    <category term="VMware Workstation" scheme="https://goo-aw233.github.io/tags/VMware-Workstation/"/>
-    
     <category term="DOS" scheme="https://goo-aw233.github.io/tags/DOS/"/>
+    
+    <category term="VMware Workstation" scheme="https://goo-aw233.github.io/tags/VMware-Workstation/"/>
     
   </entry>
   
@@ -1058,9 +1058,9 @@
     <category term="DOS" scheme="https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/DOS/"/>
     
     
-    <category term="VMware Workstation" scheme="https://goo-aw233.github.io/tags/VMware-Workstation/"/>
-    
     <category term="DOS" scheme="https://goo-aw233.github.io/tags/DOS/"/>
+    
+    <category term="VMware Workstation" scheme="https://goo-aw233.github.io/tags/VMware-Workstation/"/>
     
   </entry>
   
