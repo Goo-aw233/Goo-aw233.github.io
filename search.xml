@@ -320,25 +320,6 @@
       </tags>
   </entry>
   <entry>
-    <title>从 OTA 包中提取 boot</title>
-    <url>/zh-CN/tutorial/Android/OTAExtractionBoot/</url>
-    <content><![CDATA[<p>有时，Pixel 出厂镜像还没 OTA 更新的快，但是 Magisk 又需要 boot.img 来修补<br>这时候我们就可以 <del>直接用旧的修补过的 boot.img 来用</del> 从 OTA 包中提取出我们要用到的 boot.img 了<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/OTAExtractionBoot/OTAExtractionBoot1.png" alt="镜像下载"></p>
-<h2 id="提取-boot-img"><a href="#提取-boot-img" class="headerlink" title="提取 boot.img"></a>提取 boot.img</h2><p>从 <a href="https://gbcs6-my.sharepoint.com/:f:/g/personal/gucats_gbcs6_onmicrosoft_com/EnMeBwe0BG5DrWpM4HgtGLYBYgUHlQdu9Ng0yI77q47t9w?e=NEQmhJ">OneDrive</a> 中下载 payload-dumper-go 并将其解压到空白文件夹（64 位系统用 payload-dumper-go-64，32 位系统用 payload-dumper-go-32，如果不知道你的 Windows 是多少位请直接用 payload-dumper-go-32）<br>然后解压 OTA 包里的 <code>payload.bin</code> 文件到同目录后运行 <code>Runme.bat</code></p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/OTAExtractionBoot/OTAExtractionBoot2.png" alt="运行"></p>
-<p>然后在脚本里输入 <code>b</code> 后按下回车</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/OTAExtractionBoot/OTAExtractionBoot3.png" alt="提取"></p>
-<p>完成后按任意键退出，脚本会打开提取出文件的文件夹</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/OTAExtractionBoot/OTAExtractionBoot4.png" alt="退出"></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>更新 Hexo 和插件、主题</title>
     <url>/zh-CN/tutorial/Hexo/update/</url>
     <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>备份好所有关于 Hexo 的文件，避免出错跑路（悲<br>以下所有操作建议在 Git 里运行<br>懒得配图了捏（））（</p>
@@ -374,74 +355,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pixel 5 刷机与 Root</title>
-    <url>/zh-CN/tutorial/Android/Pixel5FlashAndRoot/</url>
-    <content><![CDATA[<h2 id="开篇提醒"><a href="#开篇提醒" class="headerlink" title="开篇提醒"></a>开篇提醒</h2><p><strong>如果你没有 Root 请记得退出你的 Google 账户，若有重要数据，请备份</strong></p>
-<h2 id="下载安装固件、驱动与-ADB"><a href="#下载安装固件、驱动与-ADB" class="headerlink" title="下载安装固件、驱动与 ADB"></a>下载安装固件、驱动与 ADB</h2><p><a href="https://developers.google.cn/android/images?hl=zh-cn#redfin">从 Google Play service 下载固件</a> | <a href="https://dl.google.com/android/repository/usb_driver_r13-windows.zip?hl=zh-cn">usb_driver</a> | <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip?hl=zh-cn">ADB 工具（Android SDK Platform-Tools）</a></p>
-<p>在 developers.google 下载好你需要的系统固件，点击 <code>Link</code> 并下载</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot1.png"></p>
-<p>将 usb_driver 解压后右键 <code>android_winusb.inf</code> 并选择“安装(I)”</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot2.png"></p>
-<p>同时将 <code>platform-tools</code>解压到空白文件夹，并确保路径内没有空格，然后再将下载好的固件解压到 platform-tools 所在目录</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot3.png"></p>
-<p>打开 <code>platform-tools</code> 文件夹，在地址栏复制右键，以管理员身份运行 CMD，并输入如下命令：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;platform-tools 所在路径&gt;</span><br><span class="line">&lt;盘符&gt;:</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot4.png"></p>
-<h2 id="解锁-BootLoader-与调试模式"><a href="#解锁-BootLoader-与调试模式" class="headerlink" title="解锁 BootLoader 与调试模式"></a>解锁 BootLoader 与调试模式</h2><h3 id="解锁-Bootloader"><a href="#解锁-Bootloader" class="headerlink" title="解锁 Bootloader"></a>解锁 Bootloader</h3><p><strong>解除 Bootloader 会导致设备数据清空，请先备份资料</strong><br>在“设置” – “关于手机”里，连续点几次<code>版本号</code>来打开开发者模式</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot5.png"></p>
-<p>然后在“系统” – “开发者选项”中找到名为<code> OEM 解锁</code>的选项，并将它开启</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot6.png"></p>
-<p>或者使用 ADB 命令解锁</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">fastboot flashing unlock</span><br></pre></td></tr></table></figure>
-
-<p>然后通过音量键选择选项，电源键确认解锁<br>完成后输入</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
-
-<p>即可重启</p>
-<h2 id="开启-USB-调试"><a href="#开启-USB-调试" class="headerlink" title="开启 USB 调试"></a>开启 USB 调试</h2><p>在“系统” – “开发者选项”中找到名为 <code>USB 调试</code>的选项，并将它开启</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot7.png"></p>
-<h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>在 CMD 中输入命令，进入到 Bootloader 界面</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure>
-
-<h3 id="双清"><a href="#双清" class="headerlink" title="双清"></a>双清</h3><p>进入到 Bootloader 后使用音量键切换到 <code>Recovery Mode</code>，然后按下电源键，这样就会进入到倒地的 Android 界面并显示“no command” 的界面</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot8.png"></p>
-<p>接着长按开机键，接着按下音量上键即可进入 Recovery</p>
-<p>进入 Recovery 后用音量下键选择到 <code>Wipe data/factory reset</code>，并按下电源键</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot9.png"></p>
-<p>接着用音量下键选择到 <code>Factory data reset</code>，并按下电源键</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot10.png"></p>
-<p>接着就会清理 data 与 factory 的数据，完成后用音量下键选择到 <code>Reboot to bootloader</code>，并按下电源键</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot11.png"></p>
-<h3 id="刷入固件"><a href="#刷入固件" class="headerlink" title="刷入固件"></a>刷入固件</h3><p>在 <code>platform-tools</code> 文件夹中找到 <code>flash-all.bat</code>，并双击打开，等待刷机</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot12.png"></p>
-<p>刷机完成后按下任意键即可退出</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot13.png"></p>
-<h2 id="Root"><a href="#Root" class="headerlink" title="Root"></a>Root</h2><p>从 GitHub 下载 <a href="https://raw.githubusercontent.com/topjohnwu/magisk-files/canary/app-release.apk">Magisk Canary</a> 并安装<br>并从 <code>platform-tools</code> 文件夹中找到 <code>image.xxx.zip</code>，解压出里面的 <code>boot.img</code>，并复制到设备里的 <code>Download</code> 文件夹内</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot14.png"></p>
-<p>在设备上打开 <code>Magisk</code>，选择<code>安装</code> – <code>选择并修补一个文件</code>，然后在下载文件夹找到 <code>boot.img</code> 文件，并选择<code>开始</code></p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot15.png"></p>
-<p>完成后将修补好的 <code>magisk_patched-xxx.img</code> 复制到 <code>platform-tools</code> 文件夹<br>复制完成后右键 <code>magisk_patched-xxx.img</code> 并选择 <code>复制路径</code>，在 CMD 中输入命令</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">adb reboot bootloader</span><br><span class="line">fastboot boot &lt;magisk_patched-xxx.img 所在路径&gt;</span><br></pre></td></tr></table></figure>
-
-<p>然后就会修补镜像到 Android，至此 Root 就成功了</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot16.png"></p>
-<p>完成后再次打开 <code>Magisk</code>，选择<code>安装</code> – <code>直接按照（推荐）</code> – <code>开始</code>，完成后点击<code>重启</code></p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot17.png"></p>
-<h2 id="升级系统"><a href="#升级系统" class="headerlink" title="升级系统"></a>升级系统</h2><p>与上面差不多，只需要<a href="https://developers.google.cn/android/images?hl=zh-cn#redfin">从 Google Play service 下载固件</a>，然后将编辑 <code>flash-all.bat</code>，并将里面的 <code>-w </code>给删除并保存即可</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot18.png"></p>
-<p>然后再按照上面的 Root 方法重新将设备 Root 即可</p>
-<p>如果你愿意走 OTA 可以另寻他法</p>
-]]></content>
-      <categories>
-        <category>教程</category>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -564,6 +477,93 @@
         <category>教程</category>
         <category>iOS</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Pixel 5 刷机与 Root</title>
+    <url>/zh-CN/tutorial/Android/Pixel5FlashAndRoot/</url>
+    <content><![CDATA[<h2 id="开篇提醒"><a href="#开篇提醒" class="headerlink" title="开篇提醒"></a>开篇提醒</h2><p><strong>如果你没有 Root 请记得退出你的 Google 账户，若有重要数据，请备份</strong></p>
+<h2 id="下载安装固件、驱动与-ADB"><a href="#下载安装固件、驱动与-ADB" class="headerlink" title="下载安装固件、驱动与 ADB"></a>下载安装固件、驱动与 ADB</h2><p><a href="https://developers.google.cn/android/images?hl=zh-cn#redfin">从 Google Play service 下载固件</a> | <a href="https://dl.google.com/android/repository/usb_driver_r13-windows.zip?hl=zh-cn">usb_driver</a> | <a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip?hl=zh-cn">ADB 工具（Android SDK Platform-Tools）</a></p>
+<p>在 developers.google 下载好你需要的系统固件，点击 <code>Link</code> 并下载</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot1.png"></p>
+<p>将 usb_driver 解压后右键 <code>android_winusb.inf</code> 并选择“安装(I)”</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot2.png"></p>
+<p>同时将 <code>platform-tools</code>解压到空白文件夹，并确保路径内没有空格，然后再将下载好的固件解压到 platform-tools 所在目录</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot3.png"></p>
+<p>打开 <code>platform-tools</code> 文件夹，在地址栏复制右键，以管理员身份运行 CMD，并输入如下命令：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;platform-tools 所在路径&gt;</span><br><span class="line">&lt;盘符&gt;:</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot4.png"></p>
+<h2 id="解锁-BootLoader-与调试模式"><a href="#解锁-BootLoader-与调试模式" class="headerlink" title="解锁 BootLoader 与调试模式"></a>解锁 BootLoader 与调试模式</h2><h3 id="解锁-Bootloader"><a href="#解锁-Bootloader" class="headerlink" title="解锁 Bootloader"></a>解锁 Bootloader</h3><p><strong>解除 Bootloader 会导致设备数据清空，请先备份资料</strong><br>在“设置” – “关于手机”里，连续点几次<code>版本号</code>来打开开发者模式</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot5.png"></p>
+<p>然后在“系统” – “开发者选项”中找到名为<code> OEM 解锁</code>的选项，并将它开启</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot6.png"></p>
+<p>或者使用 ADB 命令解锁</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">fastboot flashing unlock</span><br></pre></td></tr></table></figure>
+
+<p>然后通过音量键选择选项，电源键确认解锁<br>完成后输入</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
+
+<p>即可重启</p>
+<h2 id="开启-USB-调试"><a href="#开启-USB-调试" class="headerlink" title="开启 USB 调试"></a>开启 USB 调试</h2><p>在“系统” – “开发者选项”中找到名为 <code>USB 调试</code>的选项，并将它开启</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot7.png"></p>
+<h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>在 CMD 中输入命令，进入到 Bootloader 界面</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure>
+
+<h3 id="双清"><a href="#双清" class="headerlink" title="双清"></a>双清</h3><p>进入到 Bootloader 后使用音量键切换到 <code>Recovery Mode</code>，然后按下电源键，这样就会进入到倒地的 Android 界面并显示“no command” 的界面</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot8.png"></p>
+<p>接着长按开机键，接着按下音量上键即可进入 Recovery</p>
+<p>进入 Recovery 后用音量下键选择到 <code>Wipe data/factory reset</code>，并按下电源键</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot9.png"></p>
+<p>接着用音量下键选择到 <code>Factory data reset</code>，并按下电源键</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot10.png"></p>
+<p>接着就会清理 data 与 factory 的数据，完成后用音量下键选择到 <code>Reboot to bootloader</code>，并按下电源键</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot11.png"></p>
+<h3 id="刷入固件"><a href="#刷入固件" class="headerlink" title="刷入固件"></a>刷入固件</h3><p>在 <code>platform-tools</code> 文件夹中找到 <code>flash-all.bat</code>，并双击打开，等待刷机</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot12.png"></p>
+<p>刷机完成后按下任意键即可退出</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot13.png"></p>
+<h2 id="Root"><a href="#Root" class="headerlink" title="Root"></a>Root</h2><p>从 GitHub 下载 <a href="https://raw.githubusercontent.com/topjohnwu/magisk-files/canary/app-release.apk">Magisk Canary</a> 并安装<br>并从 <code>platform-tools</code> 文件夹中找到 <code>image.xxx.zip</code>，解压出里面的 <code>boot.img</code>，并复制到设备里的 <code>Download</code> 文件夹内</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot14.png"></p>
+<p>在设备上打开 <code>Magisk</code>，选择<code>安装</code> – <code>选择并修补一个文件</code>，然后在下载文件夹找到 <code>boot.img</code> 文件，并选择<code>开始</code></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot15.png"></p>
+<p>完成后将修补好的 <code>magisk_patched-xxx.img</code> 复制到 <code>platform-tools</code> 文件夹<br>复制完成后右键 <code>magisk_patched-xxx.img</code> 并选择 <code>复制路径</code>，在 CMD 中输入命令</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">adb reboot bootloader</span><br><span class="line">fastboot boot &lt;magisk_patched-xxx.img 所在路径&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后就会修补镜像到 Android，至此 Root 就成功了</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot16.png"></p>
+<p>完成后再次打开 <code>Magisk</code>，选择<code>安装</code> – <code>直接按照（推荐）</code> – <code>开始</code>，完成后点击<code>重启</code></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot17.png"></p>
+<h2 id="升级系统"><a href="#升级系统" class="headerlink" title="升级系统"></a>升级系统</h2><p>与上面差不多，只需要<a href="https://developers.google.cn/android/images?hl=zh-cn#redfin">从 Google Play service 下载固件</a>，然后将编辑 <code>flash-all.bat</code>，并将里面的 <code>-w </code>给删除并保存即可</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pixel5FlashAndRoot/Pixel5FlashAndRoot18.png"></p>
+<p>然后再按照上面的 Root 方法重新将设备 Root 即可</p>
+<p>如果你愿意走 OTA 可以另寻他法</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从 OTA 包中提取 boot</title>
+    <url>/zh-CN/tutorial/Android/OTAExtractionBoot/</url>
+    <content><![CDATA[<p>有时，Pixel 出厂镜像还没 OTA 更新的快，但是 Magisk 又需要 boot.img 来修补<br>这时候我们就可以 <del>直接用旧的修补过的 boot.img 来用</del> 从 OTA 包中提取出我们要用到的 boot.img 了<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/OTAExtractionBoot/OTAExtractionBoot1.png" alt="镜像下载"></p>
+<h2 id="提取-boot-img"><a href="#提取-boot-img" class="headerlink" title="提取 boot.img"></a>提取 boot.img</h2><p>从 <a href="https://gbcs6-my.sharepoint.com/:f:/g/personal/gucats_gbcs6_onmicrosoft_com/EnMeBwe0BG5DrWpM4HgtGLYBYgUHlQdu9Ng0yI77q47t9w?e=NEQmhJ">OneDrive</a> 中下载 payload-dumper-go 并将其解压到空白文件夹（64 位系统用 payload-dumper-go-64，32 位系统用 payload-dumper-go-32，如果不知道你的 Windows 是多少位请直接用 payload-dumper-go-32）<br>然后解压 OTA 包里的 <code>payload.bin</code> 文件到同目录后运行 <code>Runme.bat</code></p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/OTAExtractionBoot/OTAExtractionBoot2.png" alt="运行"></p>
+<p>然后在脚本里输入 <code>b</code> 后按下回车</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/OTAExtractionBoot/OTAExtractionBoot3.png" alt="提取"></p>
+<p>完成后按任意键退出，脚本会打开提取出文件的文件夹</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/OTAExtractionBoot/OTAExtractionBoot4.png" alt="退出"></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
   </entry>
   <entry>
     <title>在 NUC8i5BEH 安装黑苹果与 Windows</title>
@@ -1231,6 +1231,73 @@
       </tags>
   </entry>
   <entry>
+    <title>使用 DISM 挂载映像</title>
+    <url>/zh-CN/tutorial/Windows/MountImage-DISM/</url>
+    <content><![CDATA[<h2 id="挂载映像"><a href="#挂载映像" class="headerlink" title="挂载映像"></a>挂载映像</h2><p>以管理员身份运行 CMD</p>
+<p>查询映像内可用版本</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Get-WimInfo /WimFile:&lt;映像文件路径&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若我的映像文件路径在 <code>C:\Temp\offline</code>，文件名为 <code>install.wim</code>，则命令如下</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Get-WimInfo /WimFile:C:\Temp\offline\install.wim</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/Goo-aw233/WebSiteResources/main/Pics/MountImage-DISM/MountImage-DISM1.png" alt="/Get-WimInfo"></p>
+<p>使用 <code>/Mount-Image</code>挂载镜像</p>
+<p>更多关于具体用法可以查看 <a href="https://bbs.pcbeta.com/viewthread-1196134-1-1.html">PCBeta</a></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Mount-Image /Imagefile:&lt;映像文件路径&gt; /Index:&lt;映像索引编号&gt; /MountDir:&lt;挂载目录&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若我的映像文件路径在 <code>C:\Temp\offline</code>，文件名为 <code>install.wim</code>，映像索引编号为 <code>2</code>，挂载目录在 <code>C:\Temp\offline\mount</code>，则命令如下（<strong>请确保你没有打开挂载目录，且挂载目录为空</strong>）</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Mount-Image /Imagefile:C:\Temp\offline\install.wim /Index:<span class="number">2</span> /MountDir:C:\Temp\offline\mount</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/Goo-aw233/WebSiteResources/main/Pics/MountImage-DISM/MountImage-DISM2.png" alt="/Mount-Image"></p>
+<h2 id="提交对映像的更改"><a href="#提交对映像的更改" class="headerlink" title="提交对映像的更改"></a>提交对映像的更改</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Commit-Image /MountDir:&lt;挂载目录&gt;</span><br></pre></td></tr></table></figure>
+
+<p>提交对映像的更改时，可以使用 <code>/CheckIntegrity</code> 来检测和跟踪 <code>.wim</code> 文件损坏情况，应用或装载映像时，请再次使用 <code>/CheckIntegrity</code>，以便在检测到文件损坏时停止操作；但不能对虚拟硬盘 (VHD) 文件使用 <code>/CheckIntegrity</code> 命令</p>
+<p>若我的挂载目录在 <code>C:\Temp\offline\mount</code>，则命令如下（<strong>请确保你没有打开挂载目录</strong>）</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Commit-Image /MountDir:C:\Temp\offline\mount</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/Goo-aw233/WebSiteResources/main/Pics/MountImage-DISM/MountImage-DISM3.png" alt="/Commit-Image"></p>
+<h2 id="卸载映像"><a href="#卸载映像" class="headerlink" title="卸载映像"></a>卸载映像</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Unmount-Image /MountDir:&lt;挂载目录&gt; &#123;/Commit | /Discard&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>/Commit</code> 与 <code>/Discard</code> 参数必须二选一，<code>/Commit</code> 为提交更改，<code>/Discard</code> 为放弃更改，已经提交过的更改不会被放弃</strong></p>
+<p>若我的挂载目录在 <code>C:\Temp\offline\mount</code>，并提交更改，则命令如下（<strong>请确保你没有打开挂载目录</strong>）</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Unmount-Image /MountDir:C:\Temp\offline\mount /Commit</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://raw.githubusercontent.com/Goo-aw233/WebSiteResources/main/Pics/MountImage-DISM/MountImage-DISM4.png" alt="/Unmount-Image"></p>
+<details>
+
+<summary>你还可以减少映像占用空间</summary>
+
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Image:&lt;挂载目录&gt; /Cleanup-Image /StartComponentCleanup /ResetBase  </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Unmount-Image /MountDir:&lt;挂载目录&gt; /Commit</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Export-Image /SourceImageFile:&lt;映像文件路径&gt; /SourceIndex:<span class="number">1</span> /DestinationImageFile:&lt;输出映像文件路径&gt;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h2 id="疑难解答"><a href="#疑难解答" class="headerlink" title="疑难解答"></a>疑难解答</h2><p>如果本主题中的 DISM 命令失败，请尝试以下做法：</p>
+<ol>
+<li><p>确保使用随 Windows ADK 一起安装的 Windows 10/11 版 DISM</p>
+</li>
+<li><p>不要将映像装载到受保护的文件夹，例如 <code>User\Documents</code> 文件夹</p>
+</li>
+<li><p>如果 DISM 进程中断，请考虑暂时断开网络连接并禁用病毒防护</p>
+</li>
+<li><p>如果 DISM 进程中断，请考虑改为从 Windows 预安装环境 (WinPE) 运行命令</p>
+</li>
+</ol>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://learn.microsoft.com/windows-hardware/manufacture/desktop/mount-and-modify-a-windows-image-using-dism/?wt.mc_id=studentamb_265231">Microsoft Learn - 使用 DISM 修改 Windows 映像</a></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Windows</category>
+        <category>DISM</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解决 Windows Vista 和 7 问题合集（1）</title>
     <url>/zh-CN/tutorial/Windows/NT6upd/</url>
     <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><p>Windows Vista<br>Windows 7<br>Windows Server 2008 (R2)<br>Windows Home Server 2011<br><a href="https://gbcs6-my.sharepoint.com/:f:/g/personal/gucats_gbcs6_onmicrosoft_com/EjN3cFfSg7BHrAZU9_hoRgkBsatckW6OJm4G6rvxoiwgEQ">补丁</a><br>（章节 I 请选择 <code>SP</code> 文件夹内的内容，章节 II 请选择 <code>Update Package</code> 文件夹的内容，x64 为 64 位，x86 为 32 位）<br><img data-src="https://s2.loli.net/2022/08/14/Uh8eV5HDg4nNkYM.png"></p>
@@ -1242,6 +1309,40 @@
 <hr>
 <p>然后就完成了<br><img data-src="https://s2.loli.net/2022/08/14/keTFK3yjLzgwWcd.png" alt="Windows Vista SP2"><br><img data-src="https://s2.loli.net/2022/08/14/9BbW8T2cLJFMl4w.png" alt="Windows 7 SP1"></p>
 <h2 id="章节-II（解决无法获取更新）"><a href="#章节-II（解决无法获取更新）" class="headerlink" title="章节 II（解决无法获取更新）"></a>章节 II（解决无法获取更新）</h2>]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 UUP 构建 Windows 镜像</title>
+    <url>/zh-CN/tutorial/Windows/UUP/</url>
+    <content><![CDATA[<h2 id="UUPDump"><a href="#UUPDump" class="headerlink" title="UUPDump"></a>UUPDump</h2><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p><a href="https://uupdump.net/?lang=zh-cn">UUPDump</a><br><a href="https://www.uupdump.cn/">UUPDump 中文站</a></p>
+<p>白色矩形框中可以输入你想要查找的 Windows 版本，如 22621，22H2 或者 Windows 11<br>红色矩形框内可以快速选择你要下载的渠道，顺序依次为：正式版、预发布版（Release Preview）、Beta、Dev，稳定性依次递减，功能选择性依次递增<br>草绿色矩形框内选择的是组合更新，或者其它的更新等</p>
+<p>列表内对应的注释如下：</p>
+<li><font color=green>带有 Insider Preview 字样的是预览版，不带则是正式版；排序越往上，版本越新</font></li>
+<li><font color=yellow>x64 适用于普通计算机；arm64 则适用于 Surface Pro X、Raspberry Pi、Apple M 等 ARM64 设备</font></li>
+<li><font color=green>①：Cumulative Update 为组合更新，会有功能与安全上的更新<br>②：Feature update 是质量更新，仅有安全上的更新<br>③：Update Stack Package 为服务堆栈更新，目前仅面向预览通道，会有功能、安全以及系统文件等的更新<br>④：Update for Windows Feature Experience Pack 为功能体验包，一说是 UI 更新等，是普通的补丁更新<br>⑤：Update for Windows 为普通的补丁更新</br></font></li>
+
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP1.png" alt="UUPDump"></p>
+<p>在列表内点击所需更新的名称以继续<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP2.png" alt="列表"></p>
+<p>左侧白色矩形框内选择语言，点击下一步<br>右侧黄色矩形框的作用请转到<a href="#%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE">附录</a><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP3.png" alt="选择语言"></p>
+<p>左侧红色矩形框选择你要下载的版本，一般<font color=green>只选择</font> Windows Pro 即可（除非你需要家庭版（中文版）才选择 Windows Home 或 Windows Home China）<br>右侧“虚拟升级版本”指明了对应的版本需要勾选什么<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP4.png" alt="选择版本"></p>
+<p>左侧白色矩形框中选择第二或第三个都可以<br>选择第二个默认只输出专业版、家庭版（中文版）、和 Team 版（需要在上一页勾选才出现）<br>选择第三个则会出现草绿色矩形框所显示的内容，根据自己的选择勾选或取消自己需要或不需要的版本</br><br><font color=red>酒红色矩形框内是构建该镜像时要求的 Windows 版本，低于最低要求会构建出一个错误的镜像</font><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP5.png" alt="选择内容"><br>大红色矩形框内选择转换选项<br>第一个是集成更新（必勾选，否则构建出的版本会是初始版本（比如 22621.1，而不是带有功能更新的 22623 这种）<br>BEFORE 是安装补丁前的 Windows 版本，AFTER 是安装后的版本<br>第二个是清理集成更新后产生的缓存文件（或许包括 WinSxS）<br>第三个是集成 .NET Framework 3.5<br>第四个是将 .wim 镜像转换为 .esd<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP5.1.png" alt="集成更新"></p>
+<p>点击“创建下载包”后就会下载一个压缩包，需要将里面所有文件（夹）解压到一个空白的文件夹<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP6.png" alt="解压下载包"></p>
+<p>双击打开 <code>uup_download_windows.cmd</code>，然后就会开始下载并构建 Windows 镜像<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP7.png" alt="下载镜像"><br>等到 cmd 界面变蓝时则代表开始集成 MetroUI APP、补丁和构建镜像<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP8.png" alt="集成 MetroUI APP"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP9.png" alt="集成补丁"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP10.png" alt="构建镜像"><br>完成后按 <kbd>0</kbd> 即可退出，然后构建出的镜像就在下载包文件夹的根目录<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP11.png" alt="退出构建，镜像位置"></p>
+<h3 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h3><p>输入你要查找的文件名，可以是内置在系统里的 MetroUI APP 或者 .cab 等其它文件<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP12.png" alt="文件查找"></p>
+<h2 id="uup-rg-adguard"><a href="#uup-rg-adguard" class="headerlink" title="uup.rg-adguard"></a>uup.rg-adguard</h2><p><a href="https://uup.rg-adguard.net/">uup.rg-adguard</a><br>第一个框选择渠道类型<br><del>解释如图例，Windows 11 的正式版与预览版包含在 <code>Windows (Insider version)</code></del> Windows 11 的正式版已迁移到 <code>Windows (Final version)</code><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP13.png" alt="渠道类型"><br>第二个选择 Windows 的版本<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP14.png" alt="选择版本"><br>第三个选择系统语言<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP15.png" alt="选择语言"><br>第四个选择系统版本<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP16.png" alt="选择版本"><br>第五个里选择第一个项，然后点击右边的 <code>multi_creatingISO...</code> 来下载创建脚本<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP17.png" alt="下载脚本"><br>点击三个点，选择“保留”——“显示详细信息”——“仍然保留”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP18.png" alt="保留"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP19.png" alt="仍然保留"><br>最后打开脚本即可开始下载</p>
+<p>中文对应如下，输入开头的字母并回车即可开启或关闭该功能，完成后按 <kbd>Enter</kbd> 继续下一步<br>ON 为选择，OFF 为反选<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP20.png" alt="脚本内中文翻译"></p>
+<hr>
+<p>输入阿拉伯字符并回车即可选择要加载的语言，DEF 为默认选择，ON 为选择，OFF 为反选，完成后按 <kbd>Enter</kbd> 继续下一步<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP21.png" alt="选择语言"></p>
+<hr>
+<p>等待一会，开始下载并构建镜像<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP22.png" alt="下载文件"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP23.png" alt="构建镜像"></p>
+<p>完成后按任意键退出，然后构建出的镜像与下载脚本在同目录<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP24.png" alt="完成"></p>
+]]></content>
       <categories>
         <category>教程</category>
         <category>Windows</category>
@@ -1325,126 +1426,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用 DISM 挂载映像</title>
-    <url>/zh-CN/tutorial/Windows/MountImage-DISM/</url>
-    <content><![CDATA[<h2 id="挂载映像"><a href="#挂载映像" class="headerlink" title="挂载映像"></a>挂载映像</h2><p>以管理员身份运行 CMD</p>
-<p>查询映像内可用版本</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Get-WimInfo /WimFile:&lt;映像文件路径&gt;</span><br></pre></td></tr></table></figure>
-
-<p>若我的映像文件路径在 <code>C:\Temp\offline</code>，文件名为 <code>install.wim</code>，则命令如下</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Get-WimInfo /WimFile:C:\Temp\offline\install.wim</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://raw.githubusercontent.com/Goo-aw233/WebSiteResources/main/Pics/MountImage-DISM/MountImage-DISM1.png" alt="/Get-WimInfo"></p>
-<p>使用 <code>/Mount-Image</code>挂载镜像</p>
-<p>更多关于具体用法可以查看 <a href="https://bbs.pcbeta.com/viewthread-1196134-1-1.html">PCBeta</a></p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Mount-Image /Imagefile:&lt;映像文件路径&gt; /Index:&lt;映像索引编号&gt; /MountDir:&lt;挂载目录&gt;</span><br></pre></td></tr></table></figure>
-
-<p>若我的映像文件路径在 <code>C:\Temp\offline</code>，文件名为 <code>install.wim</code>，映像索引编号为 <code>2</code>，挂载目录在 <code>C:\Temp\offline\mount</code>，则命令如下（<strong>请确保你没有打开挂载目录，且挂载目录为空</strong>）</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Mount-Image /Imagefile:C:\Temp\offline\install.wim /Index:<span class="number">2</span> /MountDir:C:\Temp\offline\mount</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://raw.githubusercontent.com/Goo-aw233/WebSiteResources/main/Pics/MountImage-DISM/MountImage-DISM2.png" alt="/Mount-Image"></p>
-<h2 id="提交对映像的更改"><a href="#提交对映像的更改" class="headerlink" title="提交对映像的更改"></a>提交对映像的更改</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Commit-Image /MountDir:&lt;挂载目录&gt;</span><br></pre></td></tr></table></figure>
-
-<p>提交对映像的更改时，可以使用 <code>/CheckIntegrity</code> 来检测和跟踪 <code>.wim</code> 文件损坏情况，应用或装载映像时，请再次使用 <code>/CheckIntegrity</code>，以便在检测到文件损坏时停止操作；但不能对虚拟硬盘 (VHD) 文件使用 <code>/CheckIntegrity</code> 命令</p>
-<p>若我的挂载目录在 <code>C:\Temp\offline\mount</code>，则命令如下（<strong>请确保你没有打开挂载目录</strong>）</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Commit-Image /MountDir:C:\Temp\offline\mount</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://raw.githubusercontent.com/Goo-aw233/WebSiteResources/main/Pics/MountImage-DISM/MountImage-DISM3.png" alt="/Commit-Image"></p>
-<h2 id="卸载映像"><a href="#卸载映像" class="headerlink" title="卸载映像"></a>卸载映像</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Unmount-Image /MountDir:&lt;挂载目录&gt; &#123;/Commit | /Discard&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong><code>/Commit</code> 与 <code>/Discard</code> 参数必须二选一，<code>/Commit</code> 为提交更改，<code>/Discard</code> 为放弃更改，已经提交过的更改不会被放弃</strong></p>
-<p>若我的挂载目录在 <code>C:\Temp\offline\mount</code>，并提交更改，则命令如下（<strong>请确保你没有打开挂载目录</strong>）</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Unmount-Image /MountDir:C:\Temp\offline\mount /Commit</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://raw.githubusercontent.com/Goo-aw233/WebSiteResources/main/Pics/MountImage-DISM/MountImage-DISM4.png" alt="/Unmount-Image"></p>
-<details>
-
-<summary>你还可以减少映像占用空间</summary>
-
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Image:&lt;挂载目录&gt; /Cleanup-Image /StartComponentCleanup /ResetBase  </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Unmount-Image /MountDir:&lt;挂载目录&gt; /Commit</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">DISM /Export-Image /SourceImageFile:&lt;映像文件路径&gt; /SourceIndex:<span class="number">1</span> /DestinationImageFile:&lt;输出映像文件路径&gt;</span><br></pre></td></tr></table></figure>
-
-</details>
-
-<h2 id="疑难解答"><a href="#疑难解答" class="headerlink" title="疑难解答"></a>疑难解答</h2><p>如果本主题中的 DISM 命令失败，请尝试以下做法：</p>
-<ol>
-<li><p>确保使用随 Windows ADK 一起安装的 Windows 10/11 版 DISM</p>
-</li>
-<li><p>不要将映像装载到受保护的文件夹，例如 <code>User\Documents</code> 文件夹</p>
-</li>
-<li><p>如果 DISM 进程中断，请考虑暂时断开网络连接并禁用病毒防护</p>
-</li>
-<li><p>如果 DISM 进程中断，请考虑改为从 Windows 预安装环境 (WinPE) 运行命令</p>
-</li>
-</ol>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://learn.microsoft.com/windows-hardware/manufacture/desktop/mount-and-modify-a-windows-image-using-dism/?wt.mc_id=studentamb_265231">Microsoft Learn - 使用 DISM 修改 Windows 映像</a></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-        <category>Windows</category>
-        <category>DISM</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用 UUP 构建 Windows 镜像</title>
-    <url>/zh-CN/tutorial/Windows/UUP/</url>
-    <content><![CDATA[<h2 id="UUPDump"><a href="#UUPDump" class="headerlink" title="UUPDump"></a>UUPDump</h2><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p><a href="https://uupdump.net/?lang=zh-cn">UUPDump</a><br><a href="https://www.uupdump.cn/">UUPDump 中文站</a></p>
-<p>白色矩形框中可以输入你想要查找的 Windows 版本，如 22621，22H2 或者 Windows 11<br>红色矩形框内可以快速选择你要下载的渠道，顺序依次为：正式版、预发布版（Release Preview）、Beta、Dev，稳定性依次递减，功能选择性依次递增<br>草绿色矩形框内选择的是组合更新，或者其它的更新等</p>
-<p>列表内对应的注释如下：</p>
-<li><font color=green>带有 Insider Preview 字样的是预览版，不带则是正式版；排序越往上，版本越新</font></li>
-<li><font color=yellow>x64 适用于普通计算机；arm64 则适用于 Surface Pro X、Raspberry Pi、Apple M 等 ARM64 设备</font></li>
-<li><font color=green>①：Cumulative Update 为组合更新，会有功能与安全上的更新<br>②：Feature update 是质量更新，仅有安全上的更新<br>③：Update Stack Package 为服务堆栈更新，目前仅面向预览通道，会有功能、安全以及系统文件等的更新<br>④：Update for Windows Feature Experience Pack 为功能体验包，一说是 UI 更新等，是普通的补丁更新<br>⑤：Update for Windows 为普通的补丁更新</br></font></li>
-
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP1.png" alt="UUPDump"></p>
-<p>在列表内点击所需更新的名称以继续<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP2.png" alt="列表"></p>
-<p>左侧白色矩形框内选择语言，点击下一步<br>右侧黄色矩形框的作用请转到<a href="#%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE">附录</a><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP3.png" alt="选择语言"></p>
-<p>左侧红色矩形框选择你要下载的版本，一般<font color=green>只选择</font> Windows Pro 即可（除非你需要家庭版（中文版）才选择 Windows Home 或 Windows Home China）<br>右侧“虚拟升级版本”指明了对应的版本需要勾选什么<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP4.png" alt="选择版本"></p>
-<p>左侧白色矩形框中选择第二或第三个都可以<br>选择第二个默认只输出专业版、家庭版（中文版）、和 Team 版（需要在上一页勾选才出现）<br>选择第三个则会出现草绿色矩形框所显示的内容，根据自己的选择勾选或取消自己需要或不需要的版本</br><br><font color=red>酒红色矩形框内是构建该镜像时要求的 Windows 版本，低于最低要求会构建出一个错误的镜像</font><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP5.png" alt="选择内容"><br>大红色矩形框内选择转换选项<br>第一个是集成更新（必勾选，否则构建出的版本会是初始版本（比如 22621.1，而不是带有功能更新的 22623 这种）<br>BEFORE 是安装补丁前的 Windows 版本，AFTER 是安装后的版本<br>第二个是清理集成更新后产生的缓存文件（或许包括 WinSxS）<br>第三个是集成 .NET Framework 3.5<br>第四个是将 .wim 镜像转换为 .esd<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP5.1.png" alt="集成更新"></p>
-<p>点击“创建下载包”后就会下载一个压缩包，需要将里面所有文件（夹）解压到一个空白的文件夹<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP6.png" alt="解压下载包"></p>
-<p>双击打开 <code>uup_download_windows.cmd</code>，然后就会开始下载并构建 Windows 镜像<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP7.png" alt="下载镜像"><br>等到 cmd 界面变蓝时则代表开始集成 MetroUI APP、补丁和构建镜像<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP8.png" alt="集成 MetroUI APP"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP9.png" alt="集成补丁"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP10.png" alt="构建镜像"><br>完成后按 <kbd>0</kbd> 即可退出，然后构建出的镜像就在下载包文件夹的根目录<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP11.png" alt="退出构建，镜像位置"></p>
-<h3 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h3><p>输入你要查找的文件名，可以是内置在系统里的 MetroUI APP 或者 .cab 等其它文件<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP12.png" alt="文件查找"></p>
-<h2 id="uup-rg-adguard"><a href="#uup-rg-adguard" class="headerlink" title="uup.rg-adguard"></a>uup.rg-adguard</h2><p><a href="https://uup.rg-adguard.net/">uup.rg-adguard</a><br>第一个框选择渠道类型<br><del>解释如图例，Windows 11 的正式版与预览版包含在 <code>Windows (Insider version)</code></del> Windows 11 的正式版已迁移到 <code>Windows (Final version)</code><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP13.png" alt="渠道类型"><br>第二个选择 Windows 的版本<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP14.png" alt="选择版本"><br>第三个选择系统语言<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP15.png" alt="选择语言"><br>第四个选择系统版本<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP16.png" alt="选择版本"><br>第五个里选择第一个项，然后点击右边的 <code>multi_creatingISO...</code> 来下载创建脚本<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP17.png" alt="下载脚本"><br>点击三个点，选择“保留”——“显示详细信息”——“仍然保留”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP18.png" alt="保留"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP19.png" alt="仍然保留"><br>最后打开脚本即可开始下载</p>
-<p>中文对应如下，输入开头的字母并回车即可开启或关闭该功能，完成后按 <kbd>Enter</kbd> 继续下一步<br>ON 为选择，OFF 为反选<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP20.png" alt="脚本内中文翻译"></p>
-<hr>
-<p>输入阿拉伯字符并回车即可选择要加载的语言，DEF 为默认选择，ON 为选择，OFF 为反选，完成后按 <kbd>Enter</kbd> 继续下一步<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP21.png" alt="选择语言"></p>
-<hr>
-<p>等待一会，开始下载并构建镜像<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP22.png" alt="下载文件"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP23.png" alt="构建镜像"></p>
-<p>完成后按任意键退出，然后构建出的镜像与下载脚本在同目录<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/UUP/UUP24.png" alt="完成"></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解除 UWP 联网限制</title>
-    <url>/zh-CN/tutorial/Windows/UWPnet/</url>
-    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>这个玩意 Fiddler 里也有（）<br><a href="https://gbcs6-my.sharepoint.com/:f:/g/personal/gucats_gbcs6_onmicrosoft_com/Eo47eZpT3SFKpY0XLh4tw6IBFjmFoX5pqsEuMiCWjIc1UA">EnableLoopback</a></p>
-<h2 id="解除限制"><a href="#解除限制" class="headerlink" title="解除限制"></a>解除限制</h2><hr>
-<p>如果有类似的提示点击否(N)即可<br>![(<a href="https://s2.loli.net/2022/08/15/REZAp3m4idS7JlF.png">https://s2.loli.net/2022/08/15/REZAp3m4idS7JlF.png</a>)</p>
-<hr>
-<p>在列表中选择你需要解除的应用，点击右边的复选框<br>或者点击全部选择，再点击上面的保存更改即可<br><img data-src="https://s2.loli.net/2022/08/15/429JUjVhILYZFuQ.png"><br>然后重启 UWP 应用即可</p>
-<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><p>就像这样的<br><img data-src="https://s2.loli.net/2022/08/15/8gfoB1GRxyhpNrz.png"><br>点击刷新<br><img data-src="https://s2.loli.net/2022/08/15/g29kSQRvc34YyzH.png"><br>然后找到没有被√起来的那个项，并终止它（如果没有在运行的话可能重启可以解决）<br><img data-src="https://s2.loli.net/2022/08/15/48KnYXZsjEUrANW.png"><br>然后就可以重新√上继续使用了</p>
-]]></content>
-      <categories>
-        <category>教程</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>安装 WSA 及其它三件套（旧版）</title>
     <url>/zh-CN/tutorial/Windows/WSA3in1-old/</url>
     <content><![CDATA[<p>因为原有的库使用太多 GitHub Actions 而被封禁，原库地址：<a href="https://github.com/LSPosed/MagiskOnWSA">https://github.com/LSPosed/MagiskOnWSA</a><br>该教程不确保是否可以正常使用<br><font size=5><a href="/zh-CN/tutorial/Windows/WSA3in1/" title="新版教程链接">新版教程链接</a></font></p>
@@ -1478,50 +1459,14 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 11 启用 Internet Explorer</title>
-    <url>/zh-CN/tutorial/Windows/Win11ie/</url>
-    <content><![CDATA[<p>以下教程适用于可以使用 VBS 的 Windows</p>
-<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>打开 Microsoft Edge 的设置</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/qzJDAvE4SX9hNfV.png"></p>
-<p>然后在搜索框搜索“Internet Explorer 模式”，并点击“允许在 Internet Explorer 模式下重新加载站点”</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/1k7E4rfw3eCSKbB.png"></p>
-<p>在“让 Internet Explorer 在 Microsoft Edge 中打开网站”中点击右边的选项框，点击“始终（推荐）”</p>
-<p><font size=3 color=green>（如果你设置为“从不”，把”允许在 Internet Explorer 模式下重新加载网站“改为允许的话<br>可以尝试用别的软件来重新修复 Internet Explorer 的可用性而不会打开到 Microsoft Edge）</font></p>
-<p><img data-src="https://s2.loli.net/2022/07/31/6OjUNmCzPIe4pkH.png"></p>
-<p>然后重启浏览器，你就发现这个功能选项就自动打开了<br>在你需要用它的时候点击右上角的“Internet Explorer 模式”就好</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/f7DjC3v4o5AYhxy.png"></p>
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p><font size=3 color=red>TIPS：如果你在 Microsoft Edge 中将“让 Internet Explorer 在 Microsoft Edge 中打开网站”选项改为“始终（推荐）”的话这个方法会不起效果<br>该功能在 Windows 11 22H2 某个预览版中被移除，请使用其他方法</font></p>
-<p>打开“控制面板”，选择“网络和 Internet”（或者直接在 CMD 中输入 <code>inetcpl.cpl</code>）</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/NuJn4iEUIVjfo7S.png"></p>
-<p>然后再选择“Internet 选项”</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/vNbE6kpoDwl7rQ4.png"></p>
-<p>在“Internet 属性页”中点击右上角的“?”即可打开 Internet Explorer</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/V3TUqAwPlYbuCNe.png"></p>
-<p><img data-src="https://s2.loli.net/2022/07/31/tpYF1SydDGPfRIm.png"></p>
-<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>在桌面（或任意地方）新建文本文档</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/cHkiY3fJVnZ2aL7.png"></p>
-<p>并将其命名为 <code>IE.vbs</code>（前缀 IE 可以自定义名字，如果默认不显示后缀名则须<a href="https://jingyan.baidu.com/article/fa4125acd0dee369ad709223.html">手动打开</a>）</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/PJhdKHUO5j23wm6.png"></p>
-<p>然后右键它，选择“编辑(E)”</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/gnIB3NdZFl5yMhA.png"></p>
-<p>然后输入以下代码并保存退出</p>
-<figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">CreateObject</span>(<span class="string">&quot;InternetExplorer.Application&quot;</span>).Visible=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://s2.loli.net/2022/07/31/wku8AebCrfiB734.png"></p>
-<p>完成后双击它即可打开 Internet Explorer</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/tpYF1SydDGPfRIm.png"></p>
-<h2 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h2><p>在 CMD 或 PowerShell 中输入命令开启 Internet Explorer</p>
-<p>CMD（依赖 PowerShell）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell.exe -Command &quot;$(New-Object -ComObject InternetExplorer.Application).Visible=$true&quot;</span><br></pre></td></tr></table></figure>
-
-<p>PowerShell：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$</span>(<span class="built_in">New-Object</span> <span class="literal">-ComObject</span> InternetExplorer.Application).Visible=<span class="variable">$true</span></span><br></pre></td></tr></table></figure>
-
-<p>可以将 CMD 的代码写入到 <code>IE.cmd</code>（前缀 IE 可以自定义名字，如果默认不显示后缀名则须<a href="https://jingyan.baidu.com/article/fa4125acd0dee369ad709223.html">手动打开</a>）<br>不推荐将 PowerShell 的代码写入到 <code>IE.ps1</code>，这样会影响效率，且可能会被拦截<br>代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">powershell.exe -Command &quot;$(New-Object -ComObject InternetExplorer.Application).Visible=$true&quot;</span><br></pre></td></tr></table></figure>
-
-<p>完成后双击它即可打开 Internet Explorer</p>
-<p><img data-src="https://s2.loli.net/2022/07/31/tpYF1SydDGPfRIm.png"></p>
+    <title>解除 UWP 联网限制</title>
+    <url>/zh-CN/tutorial/Windows/UWPnet/</url>
+    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>这个玩意 Fiddler 里也有（）<br><a href="https://gbcs6-my.sharepoint.com/:f:/g/personal/gucats_gbcs6_onmicrosoft_com/Eo47eZpT3SFKpY0XLh4tw6IBFjmFoX5pqsEuMiCWjIc1UA">EnableLoopback</a></p>
+<h2 id="解除限制"><a href="#解除限制" class="headerlink" title="解除限制"></a>解除限制</h2><hr>
+<p>如果有类似的提示点击否(N)即可<br>![(<a href="https://s2.loli.net/2022/08/15/REZAp3m4idS7JlF.png">https://s2.loli.net/2022/08/15/REZAp3m4idS7JlF.png</a>)</p>
+<hr>
+<p>在列表中选择你需要解除的应用，点击右边的复选框<br>或者点击全部选择，再点击上面的保存更改即可<br><img data-src="https://s2.loli.net/2022/08/15/429JUjVhILYZFuQ.png"><br>然后重启 UWP 应用即可</p>
+<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><p>就像这样的<br><img data-src="https://s2.loli.net/2022/08/15/8gfoB1GRxyhpNrz.png"><br>点击刷新<br><img data-src="https://s2.loli.net/2022/08/15/g29kSQRvc34YyzH.png"><br>然后找到没有被√起来的那个项，并终止它（如果没有在运行的话可能重启可以解决）<br><img data-src="https://s2.loli.net/2022/08/15/48KnYXZsjEUrANW.png"><br>然后就可以重新√上继续使用了</p>
 ]]></content>
       <categories>
         <category>教程</category>
@@ -1529,6 +1474,7 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+        <tag>软件</tag>
       </tags>
   </entry>
   <entry>
@@ -1595,15 +1541,50 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 11 激活跳过联网</title>
-    <url>/zh-CN/tutorial/Windows/Win11oobenetbypass/</url>
-    <content><![CDATA[<p>在 Windows 进入开箱体验（OOBE）阶段时同时按下 <kbd>Shift</kbd> 和 <kbd>F10</kbd> 来打开 CMD 窗口<br>并在窗口输入以下内容并回车</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">OOBE\BypassNRO.<span class="built_in">cmd</span></span><br></pre></td></tr></table></figure>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass1.png" alt="是英文不是数字"><br>完成后系统会自动重启<br>重启的期间需要<code>网线移除</code><br>重启之后就会有“我没有 Internet 连接”的选项<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass2.png" alt="前"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass3.png" alt="后"></p>
-<p>这样就可以不联网或使用离线账户了<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass4.png"></p>
-<p>如果没有 BypassNRO 这个文件的话可以先输入 <code>explorer</code> 并回车，在弹出的窗口中选择 C 盘<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass5.png" alt="资源管理器"><br>在根目录下新建个文本文档，重命名为 pass.cmd<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass6.png" alt="创建脚本"><br>右键它，选择“编辑”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass7.png" alt="编辑文件"><br>并在 cmd 里输入以下内容</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE /v BypassNRO /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">shutdown /r /t <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>保存后直接运行即可</p>
+    <title>Windows 11 启用 Internet Explorer</title>
+    <url>/zh-CN/tutorial/Windows/Win11ie/</url>
+    <content><![CDATA[<p>以下教程适用于可以使用 VBS 的 Windows</p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>打开 Microsoft Edge 的设置</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/qzJDAvE4SX9hNfV.png"></p>
+<p>然后在搜索框搜索“Internet Explorer 模式”，并点击“允许在 Internet Explorer 模式下重新加载站点”</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/1k7E4rfw3eCSKbB.png"></p>
+<p>在“让 Internet Explorer 在 Microsoft Edge 中打开网站”中点击右边的选项框，点击“始终（推荐）”</p>
+<p><font size=3 color=green>（如果你设置为“从不”，把”允许在 Internet Explorer 模式下重新加载网站“改为允许的话<br>可以尝试用别的软件来重新修复 Internet Explorer 的可用性而不会打开到 Microsoft Edge）</font></p>
+<p><img data-src="https://s2.loli.net/2022/07/31/6OjUNmCzPIe4pkH.png"></p>
+<p>然后重启浏览器，你就发现这个功能选项就自动打开了<br>在你需要用它的时候点击右上角的“Internet Explorer 模式”就好</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/f7DjC3v4o5AYhxy.png"></p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p><font size=3 color=red>TIPS：如果你在 Microsoft Edge 中将“让 Internet Explorer 在 Microsoft Edge 中打开网站”选项改为“始终（推荐）”的话这个方法会不起效果<br>该功能在 Windows 11 22H2 某个预览版中被移除，请使用其他方法</font></p>
+<p>打开“控制面板”，选择“网络和 Internet”（或者直接在 CMD 中输入 <code>inetcpl.cpl</code>）</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/NuJn4iEUIVjfo7S.png"></p>
+<p>然后再选择“Internet 选项”</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/vNbE6kpoDwl7rQ4.png"></p>
+<p>在“Internet 属性页”中点击右上角的“?”即可打开 Internet Explorer</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/V3TUqAwPlYbuCNe.png"></p>
+<p><img data-src="https://s2.loli.net/2022/07/31/tpYF1SydDGPfRIm.png"></p>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>在桌面（或任意地方）新建文本文档</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/cHkiY3fJVnZ2aL7.png"></p>
+<p>并将其命名为 <code>IE.vbs</code>（前缀 IE 可以自定义名字，如果默认不显示后缀名则须<a href="https://jingyan.baidu.com/article/fa4125acd0dee369ad709223.html">手动打开</a>）</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/PJhdKHUO5j23wm6.png"></p>
+<p>然后右键它，选择“编辑(E)”</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/gnIB3NdZFl5yMhA.png"></p>
+<p>然后输入以下代码并保存退出</p>
+<figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">CreateObject</span>(<span class="string">&quot;InternetExplorer.Application&quot;</span>).Visible=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://s2.loli.net/2022/07/31/wku8AebCrfiB734.png"></p>
+<p>完成后双击它即可打开 Internet Explorer</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/tpYF1SydDGPfRIm.png"></p>
+<h2 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h2><p>在 CMD 或 PowerShell 中输入命令开启 Internet Explorer</p>
+<p>CMD（依赖 PowerShell）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell.exe -Command &quot;$(New-Object -ComObject InternetExplorer.Application).Visible=$true&quot;</span><br></pre></td></tr></table></figure>
+
+<p>PowerShell：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$</span>(<span class="built_in">New-Object</span> <span class="literal">-ComObject</span> InternetExplorer.Application).Visible=<span class="variable">$true</span></span><br></pre></td></tr></table></figure>
+
+<p>可以将 CMD 的代码写入到 <code>IE.cmd</code>（前缀 IE 可以自定义名字，如果默认不显示后缀名则须<a href="https://jingyan.baidu.com/article/fa4125acd0dee369ad709223.html">手动打开</a>）<br>不推荐将 PowerShell 的代码写入到 <code>IE.ps1</code>，这样会影响效率，且可能会被拦截<br>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">powershell.exe -Command &quot;$(New-Object -ComObject InternetExplorer.Application).Visible=$true&quot;</span><br></pre></td></tr></table></figure>
+
+<p>完成后双击它即可打开 Internet Explorer</p>
+<p><img data-src="https://s2.loli.net/2022/07/31/tpYF1SydDGPfRIm.png"></p>
 ]]></content>
       <categories>
         <category>教程</category>
@@ -1808,6 +1789,20 @@
       </tags>
   </entry>
   <entry>
+    <title>屏蔽获取 Windows 11 更新</title>
+    <url>/zh-CN/tutorial/Windows/blockWin11upd/</url>
+    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>如果以下操作都没有办法屏蔽，可以再试试这个方法 <a href="/zh-CN/tutorial/Windows/blockfeatureupd/" title="屏蔽 Windows 各种更新">屏蔽 Windows 各种更新</a></p>
+<h2 id="使用组策略"><a href="#使用组策略" class="headerlink" title="使用组策略"></a>使用组策略</h2><p>（家庭版没有组策略功能，所以需要用注册表，请浏览<a href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E5%86%8C%E8%A1%A8">下一章</a><br>按下 <kbd>Windows 徽标键</kbd>+<kbd>R</kbd> 来打开运行，并输入 <code>gpedit.msc</code> 并回车<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/blockWin11upd/blockWin11upd1.png" alt="组策略"><br>然后找到“计算机配置”&gt;“管理模板”&gt;“Windows 组件”&gt;“Windows 更新”&gt;“适用于企业的 Windows 更新”&gt;“选择目标功能更新版本”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/blockWin11upd/blockWin11upd2.png" alt="定位"><br>然后点击“已启用(E)”，然后在下面的第一个矩形框中输入 <code>Windows 10</code>，第二个框根据你的系统版本填写，如 <code>22H2</code>，最后点确定保存<br>但如果设置到了不再支持设置的版本，将强制执行功能升级<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/blockWin11upd/blockWin11upd3.png" alt="值"><br>最后在“Windows 更新”里就会有提示了<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/blockWin11upd/blockWin11upd4.png" alt="设置策略"><br>Windows 11 更新的提示也没了<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/blockWin11upd/blockWin11upd5.png" alt="提示"></p>
+<h2 id="使用注册表"><a href="#使用注册表" class="headerlink" title="使用注册表"></a>使用注册表</h2>]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>备份 Windows 10/11 的 UWP 应用</title>
     <url>/zh-CN/tutorial/Windows/appxbak/</url>
     <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><h3 id="实验环境（仅限-Windows-10-及更高版本）"><a href="#实验环境（仅限-Windows-10-及更高版本）" class="headerlink" title="实验环境（仅限 Windows 10 及更高版本）"></a>实验环境（仅限 Windows 10 及更高版本）</h3><p><a href="https://gbcs6-my.sharepoint.com/:f:/g/personal/gucats_gbcs6_onmicrosoft_com/EqEQO6btyQZFtLvduBInKk8BhDipZ_p6034v4JpomBnT_A">WSAppBak</a></p>
@@ -1845,20 +1840,6 @@
       </tags>
   </entry>
   <entry>
-    <title>屏蔽获取 Windows 11 更新</title>
-    <url>/zh-CN/tutorial/Windows/blockWin11upd/</url>
-    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>如果以下操作都没有办法屏蔽，可以再试试这个方法 <a href="/zh-CN/tutorial/Windows/blockfeatureupd/" title="屏蔽 Windows 各种更新">屏蔽 Windows 各种更新</a></p>
-<h2 id="使用组策略"><a href="#使用组策略" class="headerlink" title="使用组策略"></a>使用组策略</h2><p>（家庭版没有组策略功能，所以需要用注册表，请浏览<a href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E5%86%8C%E8%A1%A8">下一章</a><br>按下 <kbd>Windows 徽标键</kbd>+<kbd>R</kbd> 来打开运行，并输入 <code>gpedit.msc</code> 并回车<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/blockWin11upd/blockWin11upd1.png" alt="组策略"><br>然后找到“计算机配置”&gt;“管理模板”&gt;“Windows 组件”&gt;“Windows 更新”&gt;“适用于企业的 Windows 更新”&gt;“选择目标功能更新版本”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/blockWin11upd/blockWin11upd2.png" alt="定位"><br>然后点击“已启用(E)”，然后在下面的第一个矩形框中输入 <code>Windows 10</code>，第二个框根据你的系统版本填写，如 <code>22H2</code>，最后点确定保存<br>但如果设置到了不再支持设置的版本，将强制执行功能升级<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/blockWin11upd/blockWin11upd3.png" alt="值"><br>最后在“Windows 更新”里就会有提示了<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/blockWin11upd/blockWin11upd4.png" alt="设置策略"><br>Windows 11 更新的提示也没了<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/blockWin11upd/blockWin11upd5.png" alt="提示"></p>
-<h2 id="使用注册表"><a href="#使用注册表" class="headerlink" title="使用注册表"></a>使用注册表</h2>]]></content>
-      <categories>
-        <category>教程</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>更改系统引导模式</title>
     <url>/zh-CN/tutorial/Windows/chgboot/</url>
     <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><p>VMware Workstation<br>（其它虚拟机或物理机都可以，只是为了方便演示）<br><a href="https://www.wepe.com.cn/">微 PE</a><br>（别的 PE 也可以）</p>
@@ -1870,6 +1851,36 @@
 <p>进入系统后打开“分区工具 DiskGenius”<br><img data-src="https://s2.loli.net/2022/07/31/TvW9LFwKnyDj7C5.png"><br>选中硬盘（不是分区）右键&gt;“转换分区表类型为 GUID 格式”&gt;“保存”<br><img data-src="https://s2.loli.net/2022/07/31/dYSIOXEQfFjniB7.png"><br>保存完后随意选择一个分区（不是硬盘）右键&gt;“拆分分区”<br><img data-src="https://s2.loli.net/2022/07/31/8K5X7LsmtncQVY2.png"><br>在分区后的空间那里输入 500.00MiB，然后选择“保持空闲”，点击“完成”<br><img data-src="https://s2.loli.net/2022/07/31/cEFOAxtdJ9Wng5e.png"></p>
 <p>完成后右键分出来的空白分区&gt;“建立 ESP/MSR 分区”<br><img data-src="https://s2.loli.net/2022/07/31/KehOCAgR2l8tHUV.png"><br>把三个复选框都选上，然后按照这样设置，点击“确定”<br><img data-src="https://s2.loli.net/2022/07/31/5XhGfFuec72PA3Q.png"><br>最后点击保存，完成后退出 DiskGenius<br><img data-src="https://s2.loli.net/2022/07/31/3c91fWGtuxZapo7.png"></p>
 <h2 id="修复引导"><a href="#修复引导" class="headerlink" title="修复引导"></a>修复引导</h2><p>点开桌面上的“Dism++”并忽略报错<br>点击上方的“恢复功能(R)”&gt;“引导修复”（需要先点击旁边选中的 Windows 才可修复）<br><img data-src="https://s2.loli.net/2022/07/31/f1vrbm25nFaG8p6.png"><br>直接点击“确定”即可<br><img data-src="https://s2.loli.net/2022/07/31/ewzoOBGI8ANW6hU.png"><br>然后重启就可以了</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>转换 Windows 10 / 11 为 LTSC(B)</title>
+    <url>/zh-CN/tutorial/Windows/convert-system-edition-to-LTS/</url>
+    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>仅支持 1507、1607、1809、21H2、24H2 版本的 Windows，对应的是 LTSB 2015、LTSB 2016、LTSC 2019、LTSC 2021 和 LTSC 2024<br>如果你需要转换到你想要的版本则需要清除数据降级 / 保留数据升级到对应版本</p>
+<h2 id="更改版本号"><a href="#更改版本号" class="headerlink" title="更改版本号"></a>更改版本号</h2><p>同时按下 <kbd>WIN</kbd> + <kbd>R</kbd> 打开运行，输入 <code>regedit</code> 并回车<br>然后定位到以下路径</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/path-to-key.png"></p>
+<p>找到以下几个值，并将里面的值修改为箭头后的值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CompositionEditionID	&gt;&gt;&gt;		EnterpriseS</span><br><span class="line">EditionID		&gt;&gt;&gt;		EnterpriseS</span><br><span class="line">ProductName		&gt;&gt;		Windows 10 Enterprise LTSC 2021</span><br><span class="line"></span><br><span class="line">如果你要转换为 IoT LTSC ，请将 EditionID 改为 IoTEnterpriseS</span><br><span class="line">↑↑↑ ProductName	后面的值改为你需要用的 LTS 版本即可 ↓↓↓（Windows 11 的别写错了）</span><br><span class="line"></span><br><span class="line">LTSB 2015 &gt;&gt;&gt; Windows 10 Enterprise 2015 LTSB</span><br><span class="line">LTSB 2016 &gt;&gt;&gt; Windows 10 Enterprise 2016 LTSB</span><br><span class="line">LTSC 2019 &gt;&gt;&gt; Windows 10 Enterprise LTSC 2019</span><br><span class="line">LTSC 2021 &gt;&gt;&gt; Windows 10 Enterprise LTSC 2021</span><br><span class="line">IoT LTSC 2021 &gt;&gt;&gt; Windows 10 IoT Enterprise LTSC 2021</span><br><span class="line">LTSC 2024 &gt;&gt;&gt; Windows 10 Enterprise LTSC 2024</span><br><span class="line">IoT LTSC 2024 &gt;&gt;&gt; Windows 10 IoT Enterprise LTSC 2024</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/value.png"></p>
+<p>完成后关闭注册表编辑器</p>
+<h2 id="安装-LTS-版本"><a href="#安装-LTS-版本" class="headerlink" title="安装 LTS 版本"></a>安装 LTS 版本</h2><p>双击打开 ISO 文件会自动挂载在资源管理器中，直接双击它就会打开安装程序</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/explorer.png"></p>
+<p>等待一会，安装程序会自动下载所需的补丁</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/preparing.png"></p>
+<p>直接点击安装(I)即可</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/ready.png"></p>
+<p>如果你没有调整注册表、调整了没有重新打开或者你的版本不是与 LTS 为同一版本则都会无法保留文件</p>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/not-ready.png"></p>
 ]]></content>
       <categories>
         <category>教程</category>
@@ -1918,6 +1929,40 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows 11 激活跳过联网</title>
+    <url>/zh-CN/tutorial/Windows/Win11oobenetbypass/</url>
+    <content><![CDATA[<p>在 Windows 进入开箱体验（OOBE）阶段时同时按下 <kbd>Shift</kbd> 和 <kbd>F10</kbd> 来打开 CMD 窗口<br>并在窗口输入以下内容并回车</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">OOBE\BypassNRO.<span class="built_in">cmd</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass1.png" alt="是英文不是数字"><br>完成后系统会自动重启<br>重启的期间需要<code>网线移除</code><br>重启之后就会有“我没有 Internet 连接”的选项<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass2.png" alt="前"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass3.png" alt="后"></p>
+<p>这样就可以不联网或使用离线账户了<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass4.png"></p>
+<p>如果没有 BypassNRO 这个文件的话可以先输入 <code>explorer</code> 并回车，在弹出的窗口中选择 C 盘<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass5.png" alt="资源管理器"><br>在根目录下新建个文本文档，重命名为 pass.cmd<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass6.png" alt="创建脚本"><br>右键它，选择“编辑”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass7.png" alt="编辑文件"><br>并在 cmd 里输入以下内容</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE /v BypassNRO /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">shutdown /r /t <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>保存后直接运行即可</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Edge 开启预览视觉效果</title>
+    <url>/zh-CN/tutorial/Windows/edge-visual/</url>
+    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>请确保你的 Microsoft Edge 版本 ≥102（最好是最新）<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/edge-visual/edge-visual1.png" alt="Microsoft Edge 版本"></p>
+<h2 id="开启实验模式"><a href="#开启实验模式" class="headerlink" title="开启实验模式"></a>开启实验模式</h2><p>在地址栏输入 <code>edge://flags</code> 并回车<br>在搜索栏中输入“Windows 11”并回车，找到以下几个项目并改为“Enabled”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/edge-visual/edge-visual2.png" alt="要开启的功能 1"><br>然后再次在搜索栏输入“Rounded”并回车，找到项目并改为“Enabled”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/edge-visual/edge-visual3.png" alt="要开启的功能 2"><br>最后点击下方的“重启”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/edge-visual/edge-visual4.png" alt="重启"><br>重启 Microsoft Edge 后在地址栏输入 <code>edge://settings/appearance</code> 并回车<br>将这两个选项开启并重启 Microsoft Edge 后即可生效<br>红色矩形框是开启的功能，橙色矩形框是开启后的效果<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/edge-visual/edge-visual5.png" alt="效果"></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为你的电脑关闭 Device/Credential Guard</title>
     <url>/zh-CN/tutorial/Windows/disable-Device-Credential-Guard/</url>
     <content><![CDATA[<p>自 Windows 11 24H2 起，Microsoft 为所有全新安装和升级的 Windows 11 默认开启了 Device/Credential Guard，这可能会影响 VMware Workstation 及其它虚拟机在内的虚拟化产品。但是 Microsoft 提供了一个 <code>Device Guard and Credential Guard hardware readiness tool</code> 来关闭 Device/Credential Guard</p>
@@ -1951,36 +1996,6 @@
       </tags>
   </entry>
   <entry>
-    <title>转换 Windows 10 / 11 为 LTSC(B)</title>
-    <url>/zh-CN/tutorial/Windows/convert-system-edition-to-LTS/</url>
-    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>仅支持 1507、1607、1809、21H2、24H2 版本的 Windows，对应的是 LTSB 2015、LTSB 2016、LTSC 2019、LTSC 2021 和 LTSC 2024<br>如果你需要转换到你想要的版本则需要清除数据降级 / 保留数据升级到对应版本</p>
-<h2 id="更改版本号"><a href="#更改版本号" class="headerlink" title="更改版本号"></a>更改版本号</h2><p>同时按下 <kbd>WIN</kbd> + <kbd>R</kbd> 打开运行，输入 <code>regedit</code> 并回车<br>然后定位到以下路径</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/path-to-key.png"></p>
-<p>找到以下几个值，并将里面的值修改为箭头后的值</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CompositionEditionID	&gt;&gt;&gt;		EnterpriseS</span><br><span class="line">EditionID		&gt;&gt;&gt;		EnterpriseS</span><br><span class="line">ProductName		&gt;&gt;		Windows 10 Enterprise LTSC 2021</span><br><span class="line"></span><br><span class="line">如果你要转换为 IoT LTSC ，请将 EditionID 改为 IoTEnterpriseS</span><br><span class="line">↑↑↑ ProductName	后面的值改为你需要用的 LTS 版本即可 ↓↓↓（Windows 11 的别写错了）</span><br><span class="line"></span><br><span class="line">LTSB 2015 &gt;&gt;&gt; Windows 10 Enterprise 2015 LTSB</span><br><span class="line">LTSB 2016 &gt;&gt;&gt; Windows 10 Enterprise 2016 LTSB</span><br><span class="line">LTSC 2019 &gt;&gt;&gt; Windows 10 Enterprise LTSC 2019</span><br><span class="line">LTSC 2021 &gt;&gt;&gt; Windows 10 Enterprise LTSC 2021</span><br><span class="line">IoT LTSC 2021 &gt;&gt;&gt; Windows 10 IoT Enterprise LTSC 2021</span><br><span class="line">LTSC 2024 &gt;&gt;&gt; Windows 10 Enterprise LTSC 2024</span><br><span class="line">IoT LTSC 2024 &gt;&gt;&gt; Windows 10 IoT Enterprise LTSC 2024</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/value.png"></p>
-<p>完成后关闭注册表编辑器</p>
-<h2 id="安装-LTS-版本"><a href="#安装-LTS-版本" class="headerlink" title="安装 LTS 版本"></a>安装 LTS 版本</h2><p>双击打开 ISO 文件会自动挂载在资源管理器中，直接双击它就会打开安装程序</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/explorer.png"></p>
-<p>等待一会，安装程序会自动下载所需的补丁</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/preparing.png"></p>
-<p>直接点击安装(I)即可</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/ready.png"></p>
-<p>如果你没有调整注册表、调整了没有重新打开或者你的版本不是与 LTS 为同一版本则都会无法保留文件</p>
-<p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/convert-system-version-to-LTS/not-ready.png"></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在浏览器中使用 Flash</title>
     <url>/zh-CN/tutorial/Windows/flash/</url>
     <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>CleanFlash 是基于中国特供 Flash 简化而成，无广告后门，现已从 GitHub 移除<br>目前仍依旧在 <a href="https://gitlab.com/cleanflash/installer/-/releases">Gitlab</a> 中更新</p>
@@ -1991,21 +2006,6 @@
 <hr>
 <p>在这两个页面点击“NEXT”和“INSTALL”继续下一步即可<br><img data-src="https://s2.loli.net/2022/07/31/MvobaSen61CglzP.png"><br><img data-src="https://s2.loli.net/2022/07/31/HCP8c3yVheq6SNL.png"><br>受网速影响，可能会安装较慢，过程中浏览器会被关闭<br>（部分安装程序在运行时可能会与 CleanFlash 安装程序冲突，请关闭后再尝试安装）<br>完成后点击“QUIT”即可<br><img data-src="https://s2.loli.net/2022/07/31/nzRBZcLarGPsy7b.png"></p>
 <h2 id="使用-CleanFlash"><a href="#使用-CleanFlash" class="headerlink" title="使用 CleanFlash"></a>使用 CleanFlash</h2><p>访问一个需要 Flash 的网站，然后开启 Internet Explorer 模式<br>（你也可以直接打开 Internet Explorer 来游玩，如果不会开启模式可以看 <a href="/zh-CN/tutorial/Windows/Win11ie/" title="这个文章（Windows 10 也可以用文章中的方法1）">这个文章（Windows 10 也可以用文章中的方法1）</a>）<br><img data-src="https://s2.loli.net/2022/07/31/cORqtSko3MaYu7g.png" alt="flash7.png"><br>打开后网页会重新加载，等待游戏加载完成就可以了<br><img data-src="https://s2.loli.net/2022/07/31/khNrqK4soi3nV52.png"><br><img data-src="https://s2.loli.net/2022/07/31/izyWLZXtTNMAFo2.png"></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Edge 开启预览视觉效果</title>
-    <url>/zh-CN/tutorial/Windows/edge-visual/</url>
-    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>请确保你的 Microsoft Edge 版本 ≥102（最好是最新）<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/edge-visual/edge-visual1.png" alt="Microsoft Edge 版本"></p>
-<h2 id="开启实验模式"><a href="#开启实验模式" class="headerlink" title="开启实验模式"></a>开启实验模式</h2><p>在地址栏输入 <code>edge://flags</code> 并回车<br>在搜索栏中输入“Windows 11”并回车，找到以下几个项目并改为“Enabled”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/edge-visual/edge-visual2.png" alt="要开启的功能 1"><br>然后再次在搜索栏输入“Rounded”并回车，找到项目并改为“Enabled”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/edge-visual/edge-visual3.png" alt="要开启的功能 2"><br>最后点击下方的“重启”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/edge-visual/edge-visual4.png" alt="重启"><br>重启 Microsoft Edge 后在地址栏输入 <code>edge://settings/appearance</code> 并回车<br>将这两个选项开启并重启 Microsoft Edge 后即可生效<br>红色矩形框是开启的功能，橙色矩形框是开启后的效果<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/edge-visual/edge-visual5.png" alt="效果"></p>
 ]]></content>
       <categories>
         <category>教程</category>
@@ -2192,6 +2192,49 @@
       </tags>
   </entry>
   <entry>
+    <title>给电脑重装 Windows</title>
+    <url>/zh-CN/tutorial/Windows/reinstallOS/</url>
+    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>本教程仅适用于支持 UEFI 的机子<br>数据无价，请谨慎操作</p>
+<h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><p><a href="https://firpe.cn/">FirPE</a> （微 PE 也是可以的，但请不要使用垃圾 PE，如果你无法分辨就请使用 FirPE）<br><a href="https://github.com/ventoy/Ventoy/releases">Ventory</a><br>Windows 镜像</p>
+<a href="/zh-CN/tutorial/Windows/UUP/" title="其它 Windows 下载">其它 Windows 下载</a>
+<p><a href="https://aka.ms/DownloadWindows10">Windows 10 官网</a><br><a href="https://aka.ms/DownloadWindows11">Windows 11 官网</a></p>
+<h2 id="制作-PE"><a href="#制作-PE" class="headerlink" title="制作 PE"></a>制作 PE</h2><p>去到下载带有 Windows 字样的 Ventory 文件，并全部解压<br>解压后运行名为“Ventory2Disk”的软件，并插入你的 U 盘，<font size=4 color=red>备份好 U 盘内所有文件后点击软件内的“安装”按钮</font>（数据无价）<br><img data-src="https://s2.loli.net/2022/08/15/kpzX3OlUu4TZNmW.png"></p>
+<hr>
+<p>如果你不需要考虑兼容性的话可以点击“配置选项”——“分区类型”——“GPT”<br>（无需电脑支持 UEFI，但兼容性会差一些）<br><img data-src="https://s2.loli.net/2022/08/15/8ysUi31IrlAZdYw.png"></p>
+<hr>
+<p>完成后去到 <a href="https://firpe.cn/page-247">FirPE 官网</a>下载安装包<br>（如果你的硬件不符合 Windows 11 的最低标准，请使用 <a href="https://firpe.horatio.cn/FirPE/1.7.1">Windows 10 版本的 FirPE</a>）<br>完成后打开安装包，点击软件右下角的“生成 ISO”<br><img data-src="https://s2.loli.net/2022/08/15/rHhNdaDZwBLcKPj.png"><br>在你的 U 盘下新建个名为“PE”（不带引号）的文件夹，并选择把 ISO 放进“PE”文件夹<br><img data-src="https://s2.loli.net/2022/08/15/udDZc2ogrVaIw8A.png"><br>等这个提示出现后就完成了<br><img data-src="https://s2.loli.net/2022/08/15/SQjcuL4FNUdOZp3.png"></p>
+<hr>
+<h3 id="如果你想添加多个-PE"><a href="#如果你想添加多个-PE" class="headerlink" title="如果你想添加多个 PE"></a>如果你想添加多个 PE</h3><p>在其它 PE 的安装程序中选择生成 ISO，然后一起放到“PE”文件夹即可<br><img data-src="https://s2.loli.net/2022/08/15/T5S2uxg17lqEBDQ.png"></p>
+<hr>
+<h2 id="进入-PE"><a href="#进入-PE" class="headerlink" title="进入 PE"></a>进入 PE</h2><p>重启电脑，等待黑屏之后按下启动热键进入启动菜单选择<br>（具体按键因人而异，可以自己搜一下“主板型号\笔记本型号+如何进入启动菜单”或者“主板型号\笔记本型号+如何设置 U 盘启动”）<br>或者启动时主板 LOGO 下方是否有说明从哪个键可以进入启动菜单<br><img data-src="https://s2.loli.net/2022/08/15/lLWMoSAmUpE7FVj.png"><br>选择带 UEFI 字样的 U 盘启动项并回车<br>如果你不知道怎么更改为 UEFI 启动的话可以自行搜索（格式为“主板厂家名+主板型号+怎么切换 UEFI 启动”或“笔记本型号+怎么切换 UEFI 启动”）<br><img data-src="https://s2.loli.net/2022/08/15/QiBDJda7UIGznF3.jpg"></p>
+<hr>
+<p>如果你看到这个提示则需要关闭安全启动，你得自行搜索（格式为“主板厂家名+主板型号+怎么关闭安全启动”或“笔记本型号+怎么关闭安全启动”）<br>或者看 <a href="https://www.ventoy.net/cn/doc_secure.html">Ventory 的教程</a><br><img data-src="https://s2.loli.net/2022/08/15/ISU3mt5KbwxQjn9.png"></p>
+<hr>
+<p>在这里选择你做好的 PE 镜像并回车<br><img data-src="https://s2.loli.net/2022/08/15/cWwiqRYCF5VKMu1.png"><br>这里的选项随意即可，如果你的显示屏分辨率低就选第二个选项<br><img data-src="https://s2.loli.net/2022/08/15/qJCywD29NpvWaQo.png"></p>
+<h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><h3 id="硬盘分区"><a href="#硬盘分区" class="headerlink" title="硬盘分区"></a>硬盘分区</h3><p>点击桌面上的“分区工具 DiskGenius”</p>
+<hr>
+<p>如果你已经是 GUID 格式硬盘且拥有 MSR/ESP 分区则请跳过该步骤<br>右击 C 盘分区，点击“拆分分区(C)”<br><img data-src="https://s2.loli.net/2022/08/15/9sBdqkPrTzeiyA8.png"><br>将“分区后部的空间：”改为 428MiB，将后面的选项改为“保持空闲”并点击开始<br><img data-src="https://s2.loli.net/2022/08/15/b3UVuNYRwHdr4QS.png"><br>有弹窗点击“是”即可<br>然后右击<font color=red>硬盘</font>，选择“转换分区表类型为 GUID 格式”<br><img data-src="https://s2.loli.net/2022/08/15/QFpqxElJKXZLsa4.png"><br>右击新拆分的分区，选择“建立 MSR/ESP 分区”<br><img data-src="https://s2.loli.net/2022/08/15/FKDxTOqtHpnyWAc.png"><br>设置保持默认，然后点击确定<br><img data-src="https://s2.loli.net/2022/08/15/eaIQuGAz358w4Zq.png"><br>最后点击左上角的“保存更改”<br><img data-src="https://s2.loli.net/2022/08/15/n8mvhk7YuxHdZ6r.png"><br>所有弹窗点击“是”即可</p>
+<hr>
+<p>然后格式化 C 盘<br><img data-src="https://s2.loli.net/2022/08/15/zlbXJUoVeKrDtj4.png"><br><img data-src="https://s2.loli.net/2022/08/15/OkIZQ8pNGq2cwgL.png"><br>所有弹窗点击“是”即可</p>
+<h3 id="安装系统-1"><a href="#安装系统-1" class="headerlink" title="安装系统"></a>安装系统</h3><p>点击桌面上的“Dism++”，如果出现报错点击确定即可<br><img data-src="https://s2.loli.net/2022/07/31/WpUdJbVT3L9nxkH.png"><br>点击上方的“恢复功能(R)”&gt;“系统还原”<br><img data-src="https://s2.loli.net/2022/07/31/ZAcasNzxLpt8owQ.png"><br>在弹出的窗口中点击第一个“浏览”<br><img data-src="https://s2.loli.net/2022/07/31/DQwvWSLUT5crqYm.png"><br>选择你已经下载好的系统镜像<br><img data-src="https://s2.loli.net/2022/08/15/6ajViUKAneSMJGo.png"><br>点击第二个预览，选择到需要安装到的分区即可，并勾选“添加引导”，目标镜像可自己选择系统版本（如果你想让系统更小，可以勾选“Compact”）<br>完成后点击“确定”即可开始安装 Microsoft Windows<br><img data-src="https://s2.loli.net/2022/07/31/d7gQtRfTxo9aLJi.png"><br>出现以下对话框时点击“确定”即可<br><img data-src="https://s2.loli.net/2022/07/31/d7gQtRfTxo9aLJi.png"><br>等待几分钟后 当 Dism++ 出现“C: 映像已经还原成功”则代表系统安装成功，这时可以拔掉 U 盘并重启系统</p>
+<h2 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h2><p>这些工具可以让你的 Microsoft Windows 更好用<br><a href="https://pcmanager.microsoft.com/">微软电脑管家（依赖 Microsoft Defender）</a> | <a href="http://t.cn/A6i8xnAx">使用帮助文档</a><br><a href="https://www.sordum.org/files/downloads.php?st-restart-explorer">重启资源管理器</a>（双击“Rexplorer.exe”或“Rexplorer_x64.exe”即可重启）<br><a href="https://geekuninstaller.com/geek.zip">软件卸载工具 Geek</a></p>
+<hr>
+<p>以下这些可选择“Menu …”&gt;“Languages”&gt;“Chinese (Simplified)”来更改语言<br><a href="https://www.sordum.org/files/downloads.php?win11-classic-context-menu">经典 Windows 11 右键菜单</a><br><a href="https://www.sordum.org/files/downloads.php?st-defender-control">关闭自带杀毒功能</a>（如果有密码，则就是 sordum）<br><a href="https://www.sordum.org/files/downloads.php?st-windows-update-blocker">关闭系统更新</a>（不推荐，因为大部分系统组件会因此无法使用，所以请在必要时才关闭）</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><font size=1>
+封面来源：Wikipedia
+<br>由微软公司 - 原始出版物：https://www.microsoft.com/windows/windows-11
+<br>直接来源：https://en.wikipedia.org/wiki/File:Windows_11_Desktop.png
+<br>合理使用：https://zh.wikipedia.org/w/index.php?curid=7668092</br>
+</font>]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>修复 Windows 系统组件</title>
     <url>/zh-CN/tutorial/Windows/repairsystem/</url>
     <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>本教程节选改编自 <a href="https://learn.microsoft.com/troubleshoot/windows-server/deployment/fix-windows-update-errors/?wt.mc_id=studentamb_265231">Microsoft Learn</a></p>
@@ -2272,49 +2315,6 @@
       <tags>
         <tag>Windows</tag>
         <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>给电脑重装 Windows</title>
-    <url>/zh-CN/tutorial/Windows/reinstallOS/</url>
-    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>本教程仅适用于支持 UEFI 的机子<br>数据无价，请谨慎操作</p>
-<h3 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h3><p><a href="https://firpe.cn/">FirPE</a> （微 PE 也是可以的，但请不要使用垃圾 PE，如果你无法分辨就请使用 FirPE）<br><a href="https://github.com/ventoy/Ventoy/releases">Ventory</a><br>Windows 镜像</p>
-<a href="/zh-CN/tutorial/Windows/UUP/" title="其它 Windows 下载">其它 Windows 下载</a>
-<p><a href="https://aka.ms/DownloadWindows10">Windows 10 官网</a><br><a href="https://aka.ms/DownloadWindows11">Windows 11 官网</a></p>
-<h2 id="制作-PE"><a href="#制作-PE" class="headerlink" title="制作 PE"></a>制作 PE</h2><p>去到下载带有 Windows 字样的 Ventory 文件，并全部解压<br>解压后运行名为“Ventory2Disk”的软件，并插入你的 U 盘，<font size=4 color=red>备份好 U 盘内所有文件后点击软件内的“安装”按钮</font>（数据无价）<br><img data-src="https://s2.loli.net/2022/08/15/kpzX3OlUu4TZNmW.png"></p>
-<hr>
-<p>如果你不需要考虑兼容性的话可以点击“配置选项”——“分区类型”——“GPT”<br>（无需电脑支持 UEFI，但兼容性会差一些）<br><img data-src="https://s2.loli.net/2022/08/15/8ysUi31IrlAZdYw.png"></p>
-<hr>
-<p>完成后去到 <a href="https://firpe.cn/page-247">FirPE 官网</a>下载安装包<br>（如果你的硬件不符合 Windows 11 的最低标准，请使用 <a href="https://firpe.horatio.cn/FirPE/1.7.1">Windows 10 版本的 FirPE</a>）<br>完成后打开安装包，点击软件右下角的“生成 ISO”<br><img data-src="https://s2.loli.net/2022/08/15/rHhNdaDZwBLcKPj.png"><br>在你的 U 盘下新建个名为“PE”（不带引号）的文件夹，并选择把 ISO 放进“PE”文件夹<br><img data-src="https://s2.loli.net/2022/08/15/udDZc2ogrVaIw8A.png"><br>等这个提示出现后就完成了<br><img data-src="https://s2.loli.net/2022/08/15/SQjcuL4FNUdOZp3.png"></p>
-<hr>
-<h3 id="如果你想添加多个-PE"><a href="#如果你想添加多个-PE" class="headerlink" title="如果你想添加多个 PE"></a>如果你想添加多个 PE</h3><p>在其它 PE 的安装程序中选择生成 ISO，然后一起放到“PE”文件夹即可<br><img data-src="https://s2.loli.net/2022/08/15/T5S2uxg17lqEBDQ.png"></p>
-<hr>
-<h2 id="进入-PE"><a href="#进入-PE" class="headerlink" title="进入 PE"></a>进入 PE</h2><p>重启电脑，等待黑屏之后按下启动热键进入启动菜单选择<br>（具体按键因人而异，可以自己搜一下“主板型号\笔记本型号+如何进入启动菜单”或者“主板型号\笔记本型号+如何设置 U 盘启动”）<br>或者启动时主板 LOGO 下方是否有说明从哪个键可以进入启动菜单<br><img data-src="https://s2.loli.net/2022/08/15/lLWMoSAmUpE7FVj.png"><br>选择带 UEFI 字样的 U 盘启动项并回车<br>如果你不知道怎么更改为 UEFI 启动的话可以自行搜索（格式为“主板厂家名+主板型号+怎么切换 UEFI 启动”或“笔记本型号+怎么切换 UEFI 启动”）<br><img data-src="https://s2.loli.net/2022/08/15/QiBDJda7UIGznF3.jpg"></p>
-<hr>
-<p>如果你看到这个提示则需要关闭安全启动，你得自行搜索（格式为“主板厂家名+主板型号+怎么关闭安全启动”或“笔记本型号+怎么关闭安全启动”）<br>或者看 <a href="https://www.ventoy.net/cn/doc_secure.html">Ventory 的教程</a><br><img data-src="https://s2.loli.net/2022/08/15/ISU3mt5KbwxQjn9.png"></p>
-<hr>
-<p>在这里选择你做好的 PE 镜像并回车<br><img data-src="https://s2.loli.net/2022/08/15/cWwiqRYCF5VKMu1.png"><br>这里的选项随意即可，如果你的显示屏分辨率低就选第二个选项<br><img data-src="https://s2.loli.net/2022/08/15/qJCywD29NpvWaQo.png"></p>
-<h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><h3 id="硬盘分区"><a href="#硬盘分区" class="headerlink" title="硬盘分区"></a>硬盘分区</h3><p>点击桌面上的“分区工具 DiskGenius”</p>
-<hr>
-<p>如果你已经是 GUID 格式硬盘且拥有 MSR/ESP 分区则请跳过该步骤<br>右击 C 盘分区，点击“拆分分区(C)”<br><img data-src="https://s2.loli.net/2022/08/15/9sBdqkPrTzeiyA8.png"><br>将“分区后部的空间：”改为 428MiB，将后面的选项改为“保持空闲”并点击开始<br><img data-src="https://s2.loli.net/2022/08/15/b3UVuNYRwHdr4QS.png"><br>有弹窗点击“是”即可<br>然后右击<font color=red>硬盘</font>，选择“转换分区表类型为 GUID 格式”<br><img data-src="https://s2.loli.net/2022/08/15/QFpqxElJKXZLsa4.png"><br>右击新拆分的分区，选择“建立 MSR/ESP 分区”<br><img data-src="https://s2.loli.net/2022/08/15/FKDxTOqtHpnyWAc.png"><br>设置保持默认，然后点击确定<br><img data-src="https://s2.loli.net/2022/08/15/eaIQuGAz358w4Zq.png"><br>最后点击左上角的“保存更改”<br><img data-src="https://s2.loli.net/2022/08/15/n8mvhk7YuxHdZ6r.png"><br>所有弹窗点击“是”即可</p>
-<hr>
-<p>然后格式化 C 盘<br><img data-src="https://s2.loli.net/2022/08/15/zlbXJUoVeKrDtj4.png"><br><img data-src="https://s2.loli.net/2022/08/15/OkIZQ8pNGq2cwgL.png"><br>所有弹窗点击“是”即可</p>
-<h3 id="安装系统-1"><a href="#安装系统-1" class="headerlink" title="安装系统"></a>安装系统</h3><p>点击桌面上的“Dism++”，如果出现报错点击确定即可<br><img data-src="https://s2.loli.net/2022/07/31/WpUdJbVT3L9nxkH.png"><br>点击上方的“恢复功能(R)”&gt;“系统还原”<br><img data-src="https://s2.loli.net/2022/07/31/ZAcasNzxLpt8owQ.png"><br>在弹出的窗口中点击第一个“浏览”<br><img data-src="https://s2.loli.net/2022/07/31/DQwvWSLUT5crqYm.png"><br>选择你已经下载好的系统镜像<br><img data-src="https://s2.loli.net/2022/08/15/6ajViUKAneSMJGo.png"><br>点击第二个预览，选择到需要安装到的分区即可，并勾选“添加引导”，目标镜像可自己选择系统版本（如果你想让系统更小，可以勾选“Compact”）<br>完成后点击“确定”即可开始安装 Microsoft Windows<br><img data-src="https://s2.loli.net/2022/07/31/d7gQtRfTxo9aLJi.png"><br>出现以下对话框时点击“确定”即可<br><img data-src="https://s2.loli.net/2022/07/31/d7gQtRfTxo9aLJi.png"><br>等待几分钟后 当 Dism++ 出现“C: 映像已经还原成功”则代表系统安装成功，这时可以拔掉 U 盘并重启系统</p>
-<h2 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h2><p>这些工具可以让你的 Microsoft Windows 更好用<br><a href="https://pcmanager.microsoft.com/">微软电脑管家（依赖 Microsoft Defender）</a> | <a href="http://t.cn/A6i8xnAx">使用帮助文档</a><br><a href="https://www.sordum.org/files/downloads.php?st-restart-explorer">重启资源管理器</a>（双击“Rexplorer.exe”或“Rexplorer_x64.exe”即可重启）<br><a href="https://geekuninstaller.com/geek.zip">软件卸载工具 Geek</a></p>
-<hr>
-<p>以下这些可选择“Menu …”&gt;“Languages”&gt;“Chinese (Simplified)”来更改语言<br><a href="https://www.sordum.org/files/downloads.php?win11-classic-context-menu">经典 Windows 11 右键菜单</a><br><a href="https://www.sordum.org/files/downloads.php?st-defender-control">关闭自带杀毒功能</a>（如果有密码，则就是 sordum）<br><a href="https://www.sordum.org/files/downloads.php?st-windows-update-blocker">关闭系统更新</a>（不推荐，因为大部分系统组件会因此无法使用，所以请在必要时才关闭）</p>
-<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><font size=1>
-封面来源：Wikipedia
-<br>由微软公司 - 原始出版物：https://www.microsoft.com/windows/windows-11
-<br>直接来源：https://en.wikipedia.org/wiki/File:Windows_11_Desktop.png
-<br>合理使用：https://zh.wikipedia.org/w/index.php?curid=7668092</br>
-</font>]]></content>
-      <categories>
-        <category>教程</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -2756,6 +2756,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Workstation 免加密启用TPM</title>
+    <url>/zh-CN/tutorial/VM/VMware/vmusetpm/</url>
+    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>该功能仅适用于 <code>Workstation 16.2</code> 及以上的版本，<font size=4 color=red>并且会导致虚拟机加密无法移除</font><br>文件迁移或系统重装后会提示输入密码，目前暂无解决办法</p>
+<h2 id="创建一个虚拟机-并启用-UEFI"><a href="#创建一个虚拟机-并启用-UEFI" class="headerlink" title="创建一个虚拟机 并启用 UEFI"></a>创建一个虚拟机 并启用 UEFI</h2><p>安全启动可以不选择启用<br><img data-src="https://s2.loli.net/2022/07/31/LojuP3C4qzSDrmk.png"></p>
+<h2 id="在-vmx-中添加代码"><a href="#在-vmx-中添加代码" class="headerlink" title="在 .vmx 中添加代码"></a>在 .vmx 中添加代码</h2><p>先关闭 VMware Workstation 主程序<br>用任意编辑器打开 .vmx 文件 在结尾添加以下代码后保存</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">managedvm.autoAddVTPM = &quot;software&quot;</span><br></pre></td></tr></table></figure>
+<p>如图所示<br><img data-src="https://s2.loli.net/2022/07/31/1dpIObz3BXcCNDA.png"><br>重新打开 VMware Workstation 并选中虚拟机<br>这样你就可以做到免加密且开启 TPM 了<br><img data-src="https://s2.loli.net/2022/07/31/yCcWQMfFxJ2wROn.png"></p>
+]]></content>
+      <categories>
+        <category>VMware</category>
+        <category>Workstation</category>
+      </categories>
+      <tags>
+        <tag>VMware Workstation</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VirtualBox 安装 macOS</title>
     <url>/zh-CN/tutorial/VM/VirtualBox/vmmacOS-vb/</url>
     <content><![CDATA[<h2 id="其它文章"><a href="#其它文章" class="headerlink" title="其它文章"></a>其它文章</h2><p>VMware Workstation：<a href="/zh-CN/tutorial/VM/VMware/vmmacOS-ws/" title="Workstation 安装 macOS">Workstation 安装 macOS</a><br>Hyper-V：<a href="#">Post not found: tutorial/VM/Hyper-V/vmmacOS-hv Hyper-V 安装 macOS</a></p>
@@ -2786,43 +2803,6 @@ IOConsoleUsers: gIOScreenLockState 3, hs 0, bs 0, now 0, sm 0x0">forums.virtualb
       <tags>
         <tag>macOS</tag>
         <tag>VirtualBox</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Workstation 免加密启用TPM</title>
-    <url>/zh-CN/tutorial/VM/VMware/vmusetpm/</url>
-    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><p>该功能仅适用于 <code>Workstation 16.2</code> 及以上的版本，<font size=4 color=red>并且会导致虚拟机加密无法移除</font><br>文件迁移或系统重装后会提示输入密码，目前暂无解决办法</p>
-<h2 id="创建一个虚拟机-并启用-UEFI"><a href="#创建一个虚拟机-并启用-UEFI" class="headerlink" title="创建一个虚拟机 并启用 UEFI"></a>创建一个虚拟机 并启用 UEFI</h2><p>安全启动可以不选择启用<br><img data-src="https://s2.loli.net/2022/07/31/LojuP3C4qzSDrmk.png"></p>
-<h2 id="在-vmx-中添加代码"><a href="#在-vmx-中添加代码" class="headerlink" title="在 .vmx 中添加代码"></a>在 .vmx 中添加代码</h2><p>先关闭 VMware Workstation 主程序<br>用任意编辑器打开 .vmx 文件 在结尾添加以下代码后保存</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">managedvm.autoAddVTPM = &quot;software&quot;</span><br></pre></td></tr></table></figure>
-<p>如图所示<br><img data-src="https://s2.loli.net/2022/07/31/1dpIObz3BXcCNDA.png"><br>重新打开 VMware Workstation 并选中虚拟机<br>这样你就可以做到免加密且开启 TPM 了<br><img data-src="https://s2.loli.net/2022/07/31/yCcWQMfFxJ2wROn.png"></p>
-]]></content>
-      <categories>
-        <category>VMware</category>
-        <category>Workstation</category>
-      </categories>
-      <tags>
-        <tag>VMware Workstation</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装 AFC2 和 AppSync</title>
-    <url>/zh-CN/tutorial/iOS/jailbreak/afc+appsync/</url>
-    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><h3 id="实验环境（其他环境一样可以）"><a href="#实验环境（其他环境一样可以）" class="headerlink" title="实验环境（其他环境一样可以）"></a>实验环境（其他环境一样可以）</h3><p>iOS6.1.3<br>Cydia</p>
-<h3 id="第三方非作者源"><a href="#第三方非作者源" class="headerlink" title="第三方非作者源"></a>第三方非作者源</h3><figure class="highlight https"><table><tr><td class="code"><pre><span class="line">雷锋源:apt.abcydia.com</span><br><span class="line">贴吧源:apt.cydiaba.cn</span><br><span class="line">AAA 知网少年:apt.dddjb.cn</span><br><span class="line">Ai-小苹果:repo.cydiabc.top</span><br><span class="line">A 壹筒天下:yttxcs.com</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装-AppSync"><a href="#安装-AppSync" class="headerlink" title="安装 AppSync"></a>安装 AppSync</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>AppSync 又名 AppSync Unified,是给越狱的设备安装越狱软件用的插件</p>
-<h3 id="如何安装"><a href="#如何安装" class="headerlink" title="如何安装"></a>如何安装</h3><p>在 Cydia 中添加软件源搜索“AppSync”<br>下载名为”AppSync Unified”的插件即可<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/afc+appsync/afc+appsync1.png" alt="AppSync"><br>安装完后点击<font size=5 color=red>“重启 SpringBoard”</font><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/afc+appsync/afc+appsync3.png" alt="重启 SpringBoard"></p>
-<h2 id="安装-Apple-File-Conduit-“2”"><a href="#安装-Apple-File-Conduit-“2”" class="headerlink" title="安装 Apple File Conduit “2”"></a>安装 Apple File Conduit “2”</h2><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h3><p>Apple File Conduit “2” 又名 AFC2,是给越狱的设备浏览设备目录的插件</p>
-<h3 id="如何安装-1"><a href="#如何安装-1" class="headerlink" title="如何安装"></a>如何安装</h3><p>在 Cydia 中直接搜索“Apple File”即可跳出相对应的结果<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/afc+appsync/afc+appsync2.png" alt="Apple File Conduit “2”"><br>安装完后点击<font size=5 color=red>“重启 SpringBoard”</font><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/afc+appsync/afc+appsync3.png" alt="重启 SpringBoard"></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-        <category>iOS</category>
-        <category>越狱</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
       </tags>
   </entry>
   <entry>
@@ -2868,6 +2848,26 @@ IOConsoleUsers: gIOScreenLockState 3, hs 0, bs 0, now 0, sm 0x0">forums.virtualb
 <h3 id="拓展功能"><a href="#拓展功能" class="headerlink" title="拓展功能"></a>拓展功能</h3><p><font size=4 color=yellow>早期一点的 CoolBooter 会提供越狱功能，你可以选择 Yes 来给双系统越狱，现在的版本则是直接帮你越狱好的</font><br>点击 I’m ready! 后会会出现这个页面，如果你不想更改原生的启动 Logo，点击 No 即可<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS12.png" alt="自定义开机 Logo"><br>如果你不想看启动时跑代码就选择 No<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS13.png" alt="取消跑码页"></p>
 <h3 id="下载系统-2"><a href="#下载系统-2" class="headerlink" title="下载系统(2)"></a>下载系统(2)</h3><p>耐心等待一会，软件即可开始下载双系统<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS14.png" alt="下载系统"><br>下载完成后开始解压并写入文件到硬盘<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS15.png" alt="解压固件"><br>完成后会出现容量不足的提示，点击确定即可<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS16.png" alt="弹窗提示"><br>点击 Rebot，然后系统就会自动重启<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS17.png" alt="重启系统"><br>重启完成后再次打开 CoolBooter，点击 Boot<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS18.png" alt="启动双系统"><br>出现这个页面时按下电源按键，等待系统自动重启<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS19.png" alt="按键锁屏"><br>重启后手机会显示这个页面，耐心等待一下就好<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS20.png" alt="完成安装过程"></p>
 <p>手机再度重启后打开 CoolBooter，点击 Boot<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS18.png" alt="启动双系统"><br>出现这个页面时按下电源按键，等待系统自动重启<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS19.png" alt="按键锁屏"><br>等待一下即可进入到系统部署界面，双系统安装完成<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/iOSdualOS/iOSdualOS21.png" alt="开机激活"></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>iOS</category>
+        <category>越狱</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装 AFC2 和 AppSync</title>
+    <url>/zh-CN/tutorial/iOS/jailbreak/afc+appsync/</url>
+    <content><![CDATA[<h2 id="用前说明"><a href="#用前说明" class="headerlink" title="用前说明"></a>用前说明</h2><h3 id="实验环境（其他环境一样可以）"><a href="#实验环境（其他环境一样可以）" class="headerlink" title="实验环境（其他环境一样可以）"></a>实验环境（其他环境一样可以）</h3><p>iOS6.1.3<br>Cydia</p>
+<h3 id="第三方非作者源"><a href="#第三方非作者源" class="headerlink" title="第三方非作者源"></a>第三方非作者源</h3><figure class="highlight https"><table><tr><td class="code"><pre><span class="line">雷锋源:apt.abcydia.com</span><br><span class="line">贴吧源:apt.cydiaba.cn</span><br><span class="line">AAA 知网少年:apt.dddjb.cn</span><br><span class="line">Ai-小苹果:repo.cydiabc.top</span><br><span class="line">A 壹筒天下:yttxcs.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-AppSync"><a href="#安装-AppSync" class="headerlink" title="安装 AppSync"></a>安装 AppSync</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>AppSync 又名 AppSync Unified,是给越狱的设备安装越狱软件用的插件</p>
+<h3 id="如何安装"><a href="#如何安装" class="headerlink" title="如何安装"></a>如何安装</h3><p>在 Cydia 中添加软件源搜索“AppSync”<br>下载名为”AppSync Unified”的插件即可<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/afc+appsync/afc+appsync1.png" alt="AppSync"><br>安装完后点击<font size=5 color=red>“重启 SpringBoard”</font><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/afc+appsync/afc+appsync3.png" alt="重启 SpringBoard"></p>
+<h2 id="安装-Apple-File-Conduit-“2”"><a href="#安装-Apple-File-Conduit-“2”" class="headerlink" title="安装 Apple File Conduit “2”"></a>安装 Apple File Conduit “2”</h2><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h3><p>Apple File Conduit “2” 又名 AFC2,是给越狱的设备浏览设备目录的插件</p>
+<h3 id="如何安装-1"><a href="#如何安装-1" class="headerlink" title="如何安装"></a>如何安装</h3><p>在 Cydia 中直接搜索“Apple File”即可跳出相对应的结果<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/afc+appsync/afc+appsync2.png" alt="Apple File Conduit “2”"><br>安装完后点击<font size=5 color=red>“重启 SpringBoard”</font><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/afc+appsync/afc+appsync3.png" alt="重启 SpringBoard"></p>
 ]]></content>
       <categories>
         <category>教程</category>
