@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/install-Windows-on-ARM-in-QEMU/</loc>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/WindowsARMonQEMU/</loc>
     
     <lastmod>2025-02-02</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/WindowsARMonQEMU/</loc>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/install-Windows-on-ARM-in-QEMU/</loc>
     
     <lastmod>2025-02-02</lastmod>
     
@@ -263,15 +263,6 @@
   </url>
   
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/macOS/macOSswit/</loc>
-    
-    <lastmod>2024-08-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/DIY_WePE_features/</loc>
     
     <lastmod>2024-08-22</lastmod>
@@ -327,6 +318,15 @@
   
   <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/WSA3in1/</loc>
+    
+    <lastmod>2024-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/Win11oobenetbypass/</loc>
     
     <lastmod>2024-08-22</lastmod>
     
@@ -407,15 +407,6 @@
   </url>
   
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/Win11oobenetbypass/</loc>
-    
-    <lastmod>2024-08-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/edge-visual/</loc>
     
     <lastmod>2024-08-22</lastmod>
@@ -435,6 +426,15 @@
   
   <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/makesetup/</loc>
+    
+    <lastmod>2024-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/macOS/macOSswit/</loc>
     
     <lastmod>2024-08-22</lastmod>
     
@@ -700,6 +700,13 @@
   </url>
   
   <url>
+    <loc>https://goo-aw233.github.io/tags/Android/</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://goo-aw233.github.io/tags/DOS/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -729,13 +736,6 @@
   
   <url>
     <loc>https://goo-aw233.github.io/tags/%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2025-02-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://goo-aw233.github.io/tags/Android/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -786,6 +786,20 @@
   </url>
   
   <url>
+    <loc>https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/Hexo/</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/Android/</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/iOS/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -807,27 +821,6 @@
   </url>
   
   <url>
-    <loc>https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/Android/</loc>
-    <lastmod>2025-02-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/Hexo/</loc>
-    <lastmod>2025-02-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/macOS/</loc>
-    <lastmod>2025-02-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/Windows/DISM/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -836,6 +829,13 @@
   
   <url>
     <loc>https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/Windows/PowerShell/</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://goo-aw233.github.io/categories/%E6%95%99%E7%A8%8B/macOS/</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

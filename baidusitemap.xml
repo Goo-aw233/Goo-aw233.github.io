@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/install-Windows-on-ARM-in-QEMU/</loc>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/WindowsARMonQEMU/</loc>
     <lastmod>2025-02-02</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/WindowsARMonQEMU/</loc>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/install-Windows-on-ARM-in-QEMU/</loc>
     <lastmod>2025-02-02</lastmod>
   </url>
   <url>
@@ -109,10 +109,6 @@
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/macOS/macOSswit/</loc>
-    <lastmod>2024-08-22</lastmod>
-  </url>
-  <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/DIY_WePE_features/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
@@ -138,6 +134,10 @@
   </url>
   <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/WSA3in1/</loc>
+    <lastmod>2024-08-22</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/Win11oobenetbypass/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
@@ -173,10 +173,6 @@
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/Win11oobenetbypass/</loc>
-    <lastmod>2024-08-22</lastmod>
-  </url>
-  <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/edge-visual/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
@@ -186,6 +182,10 @@
   </url>
   <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/makesetup/</loc>
+    <lastmod>2024-08-22</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/macOS/macOSswit/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
