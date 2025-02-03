@@ -54,7 +54,7 @@
 <meta property="og:image" content="https://s2.loli.net/2022/07/31/7sBXaMgEVlb1dOW.png">
 <meta property="og:image" content="https://s2.loli.net/2022/07/31/ztd8QqIoAbprDv9.png">
 <meta property="article:published_time" content="2022-04-17T11:05:21.000Z">
-<meta property="article:modified_time" content="2024-08-22T17:28:16.845Z">
+<meta property="article:modified_time" content="2025-02-03T03:58:41.366Z">
 <meta property="article:author" content="GuCATs">
 <meta property="article:tag" content="Windows">
 <meta property="article:tag" content="软件">
@@ -317,7 +317,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-23 01:28:16" itemprop="dateModified" datetime="2024-08-23T01:28:16+08:00">2024-08-23</time>
+      <time title="修改时间：2025-02-03 11:58:41" itemprop="dateModified" datetime="2025-02-03T11:58:41+08:00">2025-02-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -372,7 +372,7 @@
 <h2 id="整合映像"><a href="#整合映像" class="headerlink" title="整合映像"></a>整合映像</h2><p>将 imagex.exe 放入到以下文件夹</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\System32</span><br></pre></td></tr></table></figure>
 <p><img data-src="https://s2.loli.net/2022/07/31/mTCQjnGXrvo8WJK.png"><br>在搜索框搜索 cmd 并选择“以管理员身份运行”<br><img data-src="https://s2.loli.net/2022/07/31/SWhKqRzDe97JQFf.png"><br>然后在 cmd 输入以下命令</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">imagex /export &lt;映像路径\文件名.wim&gt; &lt;第几个版本&gt; &lt;导出路径\install.wim&gt; /compress maximum</span><br><span class="line"></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line">其中，</span><br><span class="line">&lt;映像路径\文件名.wim&gt; 就是修整后映像导出的位置</span><br><span class="line">&lt;第几个版本&gt; 就是你一共有几个版本在内，仅有一个就只填写 <span class="number">1</span>，如果有多个，需要多次执行命令并更改版本位数</span><br><span class="line">&lt;导出路径\install.wim&gt; 就是导出的地方在哪，需要和第一个导出的路径统一</span><br><span class="line"></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line">示例：（一个单版本的 Windows <span class="number">10</span> 和一个双版本的 Windows <span class="number">7</span>）</span><br><span class="line">imagex /export D:\isoput\after\test\<span class="number">1</span>.wim <span class="number">1</span> D:\isoput\after\test\putout\install.wim /compress maximum</span><br><span class="line">imagex /export D:\isoput\after\test\<span class="number">2</span>.wim <span class="number">1</span> D:\isoput\after\test\putout\install.wim /compress maximum</span><br><span class="line">imagex /export D:\isoput\after\test\<span class="number">2</span>.wim <span class="number">2</span> D:\isoput\after\test\putout\install.wim /compress maximum</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">imagex /export &lt;映像路径\文件名.wim&gt; &lt;第几个版本&gt; &lt;导出路径\install.wim&gt; /compress maximum</span><br><span class="line"></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line">其中，</span><br><span class="line">&lt;映像路径\文件名.wim&gt; 就是修整后映像导出的位置</span><br><span class="line">&lt;第几个版本&gt; 就是你一共有几个版本在内，仅有一个就只填写 1，如果有多个，需要多次执行命令并更改版本位数</span><br><span class="line">&lt;导出路径\install.wim&gt; 就是导出的地方在哪，需要和第一个导出的路径统一</span><br><span class="line"></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line">示例：（一个单版本的 Windows 10 和一个双版本的 Windows 7）</span><br><span class="line">imagex /export D:\isoput\after\test\1.wim 1 D:\isoput\after\test\putout\install.wim /compress maximum</span><br><span class="line">imagex /export D:\isoput\after\test\2.wim 1 D:\isoput\after\test\putout\install.wim /compress maximum</span><br><span class="line">imagex /export D:\isoput\after\test\2.wim 2 D:\isoput\after\test\putout\install.wim /compress maximum</span><br></pre></td></tr></table></figure>
 <p><font size=4 color=red>重要事项：<br>路径中只能有英文和下划线 路径中只能有英文和下划线 路径中只能有英文和下划线</font></p>
 <p>等待一会就完成了<br><img data-src="https://s2.loli.net/2022/07/31/r91kibThl5JCUyv.png"></p>
 <hr>

@@ -2,11 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/QEMU/install-Windows-on-ARM-in-QEMU/</loc>
-    <lastmod>2025-02-02</lastmod>
+    <lastmod>2025-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/disable-Device-Credential-Guard/</loc>
+    <lastmod>2025-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/AppxManagement-DISM/</loc>
+    <lastmod>2025-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Android/Pixel5FlashAndRoot/</loc>
+    <lastmod>2025-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/DIY_WePE_features/</loc>
+    <lastmod>2025-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/isorepackage/</loc>
+    <lastmod>2025-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/Win11oobenetbypass/</loc>
+    <lastmod>2025-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/XPact/</loc>
+    <lastmod>2025-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/repairsystem/</loc>
+    <lastmod>2025-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/MountImage-DISM/</loc>
+    <lastmod>2025-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/DISM_instOS_BIOS/</loc>
+    <lastmod>2025-02-03</lastmod>
   </url>
   <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/DISM_instOS_UEFI/</loc>
-    <lastmod>2025-02-02</lastmod>
+    <lastmod>2025-02-03</lastmod>
   </url>
   <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/Win11ie/</loc>
@@ -29,23 +69,7 @@
     <lastmod>2024-11-23</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/repairsystem/</loc>
-    <lastmod>2024-11-23</lastmod>
-  </url>
-  <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/MountImage-DISM/</loc>
-    <lastmod>2024-11-23</lastmod>
-  </url>
-  <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/DISM_instOS_BIOS/</loc>
-    <lastmod>2024-11-23</lastmod>
-  </url>
-  <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/AppxManagement-PowerShell/</loc>
-    <lastmod>2024-11-23</lastmod>
-  </url>
-  <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/AppxManagement-DISM/</loc>
     <lastmod>2024-11-23</lastmod>
   </url>
   <url>
@@ -77,19 +101,11 @@
     <lastmod>2024-08-31</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/disable-Device-Credential-Guard/</loc>
-    <lastmod>2024-08-31</lastmod>
-  </url>
-  <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Android/OTAExtractionBoot/</loc>
-    <lastmod>2024-08-22</lastmod>
-  </url>
-  <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/DOS/MS-DOS3.x/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Android/Pixel5FlashAndRoot/</loc>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Android/OTAExtractionBoot/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
@@ -98,10 +114,6 @@
   </url>
   <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/iOS/jailbreak/ipaunpack/</loc>
-    <lastmod>2024-08-22</lastmod>
-  </url>
-  <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/DIY_WePE_features/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
@@ -121,15 +133,11 @@
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/WSA3in1-old/</loc>
-    <lastmod>2024-08-22</lastmod>
-  </url>
-  <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/WSA3in1/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/Win11oobenetbypass/</loc>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/WSA3in1-old/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
@@ -145,10 +153,6 @@
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/XPact/</loc>
-    <lastmod>2024-08-22</lastmod>
-  </url>
-  <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/blockWin11upd/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
@@ -161,15 +165,7 @@
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/customuup/</loc>
-    <lastmod>2024-08-22</lastmod>
-  </url>
-  <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/edge-visual/</loc>
-    <lastmod>2024-08-22</lastmod>
-  </url>
-  <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/isorepackage/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
@@ -177,19 +173,19 @@
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/iOS/Unlock_full_Apple_features/</loc>
-    <lastmod>2024-08-22</lastmod>
-  </url>
-  <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/macOS/macOSswit/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/VMware/PEinstallOS/</loc>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/Windows/customuup/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
-    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/VMware/macOSVMModelEmulation/</loc>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/iOS/Unlock_full_Apple_features/</loc>
+    <lastmod>2024-08-22</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/VMware/PEinstallOS/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>
@@ -198,6 +194,10 @@
   </url>
   <url>
     <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/VMware/vmusetpm/</loc>
+    <lastmod>2024-08-22</lastmod>
+  </url>
+  <url>
+    <loc>https://goo-aw233.github.io/zh-CN/tutorial/VM/VMware/macOSVMModelEmulation/</loc>
     <lastmod>2024-08-22</lastmod>
   </url>
   <url>

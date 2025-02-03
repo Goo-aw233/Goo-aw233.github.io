@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass6.png">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass7.png">
 <meta property="article:published_time" content="2022-08-05T02:24:57.000Z">
-<meta property="article:modified_time" content="2024-08-22T17:28:16.845Z">
+<meta property="article:modified_time" content="2025-02-03T03:58:41.339Z">
 <meta property="article:author" content="GuCATs">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
@@ -299,7 +299,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-23 01:28:16" itemprop="dateModified" datetime="2024-08-23T01:28:16+08:00">2024-08-23</time>
+      <time title="修改时间：2025-02-03 11:58:41" itemprop="dateModified" datetime="2025-02-03T11:58:41+08:00">2025-02-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -349,11 +349,11 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>在 Windows 进入开箱体验（OOBE）阶段时同时按下 <kbd>Shift</kbd> 和 <kbd>F10</kbd> 来打开 CMD 窗口<br>并在窗口输入以下内容并回车</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OOBE\BypassNRO.<span class="built_in">cmd</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OOBE\BypassNRO.cmd</span><br></pre></td></tr></table></figure>
 <p><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass1.png" alt="是英文不是数字"><br>完成后系统会自动重启<br>重启的期间需要<code>网线移除</code><br>重启之后就会有“我没有 Internet 连接”的选项<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass2.png" alt="前"><br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass3.png" alt="后"></p>
 <p>这样就可以不联网或使用离线账户了<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass4.png"></p>
 <p>如果没有 BypassNRO 这个文件的话可以先输入 <code>explorer</code> 并回车，在弹出的窗口中选择 C 盘<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass5.png" alt="资源管理器"><br>在根目录下新建个文本文档，重命名为 pass.cmd<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass6.png" alt="创建脚本"><br>右键它，选择“编辑”<br><img data-src="https://gcore.jsdelivr.net/gh/Goo-aw233/WebSiteResources@main/Pics/Win11oobenetbypass/Win11oobenetbypass7.png" alt="编辑文件"><br>并在 cmd 里输入以下内容</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE /v BypassNRO /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">shutdown /r /t <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE /v BypassNRO /t REG_DWORD /d 1 /f</span><br><span class="line">shutdown /r /t 0</span><br></pre></td></tr></table></figure>
 <p>保存后直接运行即可</p>
 
     </div>
